@@ -18,13 +18,16 @@
 // under the License.
 
 import ballerina/http;
-import ballerina/io;
 import ballerina/oauth2;
 import ballerina/test;
 
-configurable string hubspotClientId = ?;
-configurable string hubspotClientSecret = ?;
-configurable string hubspotRefreshToken = ?;
+// configurable string hubspotClientId = ?;
+// configurable string hubspotClientSecret = ?;
+// configurable string hubspotRefreshToken = 
+
+final string clientId = "ee37df47-6d02-4e26-bab9-1c259ad98d25";
+final string clientSecret = "7287c09b-0e28-46cc-b535-626ff594f212";
+final string refreshToken = "na2-f206-59d7-41fb-9dae-60bc226e956b";
 
 final boolean isLiveServer = true;
 final string serviceUrl = isLiveServer ? "https://api.hubapi.com/crm/v3/objects/communications" : "http://localhost:9090";
@@ -34,9 +37,9 @@ final Client hecClient = check initClient();
 isolated function initClient() returns Client|error {
     if isLiveServer {
         OAuth2RefreshTokenGrantConfig auth = {
-            clientId: hubspotClientId,
-            clientSecret: hubspotClientSecret,
-            refreshToken: hubspotRefreshToken,
+            clientId,
+            clientSecret,
+            refreshToken,
             credentialBearer: oauth2:POST_BODY_BEARER
         };
         return check new ({auth}, serviceUrl);
@@ -49,72 +52,26 @@ isolated function initClient() returns Client|error {
     }, serviceUrl);
 }
 
-// batch
+isolated string testCommunicationId = "";
+isolated string[] testBatchIds = [];
 
-// @test:Config {}
-// isolated function testCreateBatchOfMessages() returns error? {
+final string testAssociateId1 = "83849040631";
+final string testAssociateId2 = "83849299661";
+final int contactAssociationTypeId = 81;
+final string testOwnerId = "77366318";
 
-//     BatchResponseSimplePublicObject response = check hecClient->/batch/create.post(
-//         payload = {
-//             inputs: [
-//                 {
-//                     associations: [
-//                         {
-//                             types: [
-//                                 {
-//                                     associationCategory: "HUBSPOT_DEFINED",
-//                                     associationTypeId: 1
-//                                 }
-//                             ],
-//                             to: {
-//                                 id: "76300266232"
-//                             }
-//                         }
-//                     ],
-//                     objectWriteTraceId: "",
-//                     properties: {
-//                         "additionalProp1": "test"
-//                     }
-//                 }
-//             ]
-//         }
-//     );
-
-//     io:println("Response: ", response.toJsonString());
-
-//     test:assertEquals(response is BatchResponseSimplePublicObject, true, "Response is not an instance of BatchResponseSimplePublicObject");
-// }
-
-@test:Config {}
-isolated function testGetMessages() returns error? {
-
-    CollectionResponseSimplePublicObjectWithAssociationsForwardPaging response = check hecClient->/.get();
-
-    io:println("Response: ", response.toJsonString());
-
-    test:assertEquals(response is CollectionResponseSimplePublicObjectWithAssociationsForwardPaging, true, "Response is not an array of BatchResponseSimplePublicObject");
+@test:Config {
+    groups: ["live_test", "mock_tests"]
 }
-
-@test:Config {}
-isolated function testGetMessageById() returns error? {
-
-    SimplePublicObjectWithAssociations response = check hecClient->/["76300266232"].get();
-
-    io:println("Response: ", response.toJsonString());
-
-    test:assertEquals(response is SimplePublicObjectWithAssociations, true, "Response is not an instance of SimplePublicObjectWithAssociations");
-}
-
-@test:Config {}
 isolated function testCreateMessage() returns error? {
-    SimplePublicObject response = check hecClient->/.post(
+    SimplePublicObject|error response = hecClient->/.post(
         payload = {
             properties: {
                 "hs_communication_channel_type": "SMS",
                 "hs_communication_logged_from": "CRM",
                 "hs_communication_body": "Texted Linda to confirm that we're ready to move forward with the contract.",
                 "hs_timestamp": "2022-11-12T15:48:22Z",
-                "hubspot_owner_id": "77366318"
+                "hubspot_owner_id": testOwnerId
             },
             associations: [
                 {
@@ -125,7 +82,7 @@ isolated function testCreateMessage() returns error? {
                         }
                     ],
                     to: {
-                        id: "83849040631"
+                        id: testAssociateId1
                     }
                 },
                 {
@@ -136,7 +93,7 @@ isolated function testCreateMessage() returns error? {
                         }
                     ],
                     to: {
-                        id: "83849299661"
+                        id: testAssociateId2
                     }
                 }
             ]
@@ -144,18 +101,61 @@ isolated function testCreateMessage() returns error? {
     );
 
     test:assertEquals(response is SimplePublicObject, true, "Response is not an instance of SimplePublicObject");
+
+    if (response is SimplePublicObject) {
+        lock {
+            testCommunicationId = response.id;
+        }
+    }
 }
 
-@test:Config {}
+@test:Config {
+    dependsOn: [testCreateMessage],
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testGetMessages() returns error? {
+
+    CollectionResponseSimplePublicObjectWithAssociationsForwardPaging|error response = hecClient->/.get();
+
+    test:assertEquals(response is CollectionResponseSimplePublicObjectWithAssociationsForwardPaging, true, "Response is not an array of BatchResponseSimplePublicObject");
+}
+
+@test:Config {
+    dependsOn: [testCreateMessage],
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testGetMessageById() returns error? {
+
+    string testId = "";
+
+    lock {
+        testId = testCommunicationId;
+    }
+
+    SimplePublicObjectWithAssociations|error response = hecClient->/[testId].get();
+
+    test:assertEquals(response is SimplePublicObjectWithAssociations, true, "Response is not an instance of SimplePublicObjectWithAssociations");
+}
+
+@test:Config {
+    dependsOn: [testCreateMessage],
+    groups: ["live_test", "mock_tests"]
+}
 isolated function testUpdateMessage() returns error? {
-    SimplePublicObject response = check hecClient->/["76300266232"].patch(
+    string testId = "";
+
+    lock {
+        testId = testCommunicationId;
+    }
+
+    SimplePublicObject|error response = hecClient->/[testId].patch(
         payload = {
             properties: {
                 "hs_communication_channel_type": "SMS",
                 "hs_communication_logged_from": "CRM",
                 "hs_communication_body": "Texted Linda to confirm that we're ready to move forward with the contract.",
                 "hs_timestamp": "2022-11-12T15:48:22Z",
-                "hubspot_owner_id": "77366318"
+                "hubspot_owner_id": testOwnerId
             }
         }
     );
@@ -163,9 +163,221 @@ isolated function testUpdateMessage() returns error? {
     test:assertEquals(response is SimplePublicObject, true, "Response is not an instance of SimplePublicObject");
 }
 
-@test:Config {}
+@test:Config {
+    dependsOn: [testCreateMessage, testGetMessages, testGetMessageById, testUpdateMessage],
+    groups: ["live_tests", "mock_tests"]
+}
 isolated function testDeleteMessage() returns error? {
-    http:Response response = check hecClient->/["76300266232"].delete();
+    string testId = "";
+
+    lock {
+        testId = testCommunicationId;
+    }
+
+    http:Response response = check hecClient->/[testId].delete();
 
     test:assertEquals(response.statusCode == 204, true, "Failed to delete the message");
+}
+
+@test:Config {
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testCreateBatchOfMessages() returns error? {
+
+    BatchResponseSimplePublicObject|error response = hecClient->/batch/create.post(
+        payload = {
+            inputs: [
+                {
+                    properties: {
+                        "hs_communication_channel_type": "SMS",
+                        "hs_communication_logged_from": "CRM",
+                        "hs_communication_body": "Called Harry to discuss the contract.",
+                        "hs_timestamp": "2022-11-12T15:48:22Z",
+                        "hubspot_owner_id": testOwnerId
+                    },
+                    associations: [
+                        {
+                            types: [
+                                {
+                                    associationCategory: "HUBSPOT_DEFINED",
+                                    associationTypeId: 81
+                                }
+                            ],
+                            to: {
+                                id: testAssociateId1
+                            }
+                        }
+                    ]
+                },
+                {
+                    properties: {
+                        "hs_communication_channel_type": "WHATS_APP",
+                        "hs_communication_logged_from": "CRM",
+                        "hs_communication_body": "Sent an email to Harry to discuss the contract.",
+                        "hs_timestamp": "2022-11-12T15:48:22Z",
+                        "hubspot_owner_id": testOwnerId
+                    },
+                    associations: [
+                        {
+                            types: [
+                                {
+                                    associationCategory: "HUBSPOT_DEFINED",
+                                    associationTypeId: 81
+                                }
+                            ],
+                            to: {
+                                id: testAssociateId2
+                            }
+                        }
+                    ]
+                },
+                {
+                    properties: {
+                        "hs_communication_channel_type": "LINKEDIN_MESSAGE",
+                        "hs_communication_logged_from": "CRM",
+                        "hs_communication_body": "Sent an email to Harry to discuss the contract.",
+                        "hs_timestamp": "2022-11-12T15:48:22Z",
+                        "hubspot_owner_id": testOwnerId
+                    },
+                    associations: [
+                        {
+                            types: [
+                                {
+                                    associationCategory: "HUBSPOT_DEFINED",
+                                    associationTypeId: 81
+                                }
+                            ],
+                            to: {
+                                id: testAssociateId1
+                            }
+                        },
+                        {
+                            types: [
+                                {
+                                    associationCategory: "HUBSPOT_DEFINED",
+                                    associationTypeId: 81
+                                }
+                            ],
+                            to: {
+                                id: testAssociateId2
+                            }
+                        }
+                    ]
+                }
+            ]
+        }
+    );
+
+    if (response is BatchResponseSimplePublicObject) {
+        string[] batchIds = response.results.map((result) => result.id);
+        lock {
+            testBatchIds = batchIds.clone();
+        }
+    }
+
+    test:assertEquals(response is BatchResponseSimplePublicObject, true, "Response is not an instance of BatchResponseSimplePublicObject");
+}
+
+@test:Config {
+    dependsOn: [testCreateBatchOfMessages],
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testRetrieveBatchOfMessages() returns error? {
+
+    string[] testIds = [];
+
+    lock {
+        testIds = testBatchIds.clone();
+    }
+
+    BatchResponseSimplePublicObject response = check hecClient->/batch/read.post(
+        payload = {
+            properties: ["hs_timestamp", "hs_communication_channel_type"],
+            propertiesWithHistory: ["hs_communication_body", "hs_createdate"],
+            inputs: [
+                {id: testIds[0]},
+                {id: testIds[1]},
+                {id: testIds[2]}
+            ]
+        }
+    );
+
+    test:assertTrue(response?.results.length() > 0, "Response is not an instance of BatchResponseSimplePublicObject");
+};
+
+@test:Config {
+    dependsOn: [testCreateBatchOfMessages, testRetrieveBatchOfMessages],
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testUpdateBatchOfMessages() returns error? {
+    string[] testIds = [];
+
+    lock {
+        testIds = testBatchIds.clone();
+    }
+
+    BatchResponseSimplePublicObject|error response = hecClient->/batch/update.post(
+        payload = {
+            inputs: [
+                {
+                    properties: {
+                        "hs_communication_body": "Called Harry to discuss the contract."
+                    },
+                    id: testIds[0]
+                },
+                {
+                    properties: {
+                        "hs_communication_body": "Sent an email to Harry to discuss the contract."
+                    },
+                    id: testIds[1]
+                },
+                {
+                    properties: {
+                        "hs_communication_body": "Sent an email to Harry to discuss the contract."
+                    },
+                    id: testIds[2]
+                }
+            ]
+        }
+    );
+
+    test:assertEquals(response is BatchResponseSimplePublicObject, true, "Response is not an instance of BatchResponseSimplePublicObject");
+}
+
+@test:Config {
+    dependsOn: [testCreateBatchOfMessages, testRetrieveBatchOfMessages, testUpdateBatchOfMessages],
+    groups: ["mock_tests"]
+}
+isolated function testArchiveBatchOfMessages() returns error? {
+    string[] testIds = [];
+
+    lock {
+        testIds = testBatchIds.clone();
+    }
+
+    http:Response response = check hecClient->/batch/archive.post(
+        payload = {
+            inputs: [
+                {id: testIds[0]},
+                {id: testIds[1]},
+                {id: testIds[2]}
+            ]
+        }
+    );
+
+    test:assertEquals(response.statusCode == 204, true, "Failed to delete the batch of messages");
+}
+
+@test:Config {
+    dependsOn: [testCreateBatchOfMessages],
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testSearchMessage() returns error? {
+    CollectionResponseWithTotalSimplePublicObjectForwardPaging|error response = check hecClient->/search.post(
+        payload = {
+            query: "contract"
+        }
+    );
+
+    test:assertEquals(response is CollectionResponseWithTotalSimplePublicObjectForwardPaging, true, "Response is not an instance of CollectionResponseSimplePublicObject");
 }

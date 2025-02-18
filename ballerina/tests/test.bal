@@ -21,13 +21,13 @@ import ballerina/http;
 import ballerina/oauth2;
 import ballerina/test;
 
-// configurable string hubspotClientId = ?;
-// configurable string hubspotClientSecret = ?;
-// configurable string hubspotRefreshToken = 
+type HubspotConfig record {|
+    string clientId;
+    string clientSecret;
+    string refreshToken;
+|};
 
-final string clientId = "ee37df47-6d02-4e26-bab9-1c259ad98d25";
-final string clientSecret = "7287c09b-0e28-46cc-b535-626ff594f212";
-final string refreshToken = "na2-f206-59d7-41fb-9dae-60bc226e956b";
+configurable HubspotConfig hubspotConfig = ?;
 
 final boolean isLiveServer = true;
 final string serviceUrl = isLiveServer ? "https://api.hubapi.com/crm/v3/objects/communications" : "http://localhost:9090";
@@ -37,9 +37,9 @@ final Client hecClient = check initClient();
 isolated function initClient() returns Client|error {
     if isLiveServer {
         OAuth2RefreshTokenGrantConfig auth = {
-            clientId,
-            clientSecret,
-            refreshToken,
+            clientId: hubspotConfig.clientId,
+            clientSecret: hubspotConfig.clientSecret,
+            refreshToken: hubspotConfig.refreshToken,
             credentialBearer: oauth2:POST_BODY_BEARER
         };
         return check new ({auth}, serviceUrl);
@@ -321,19 +321,19 @@ isolated function testUpdateBatchOfMessages() returns error? {
             inputs: [
                 {
                     properties: {
-                        "hs_communication_body": "Called Harry to discuss the contract."
+                        "hs_communication_body": "Called Linda to discuss the contract."
                     },
                     id: testIds[0]
                 },
                 {
                     properties: {
-                        "hs_communication_body": "Sent an email to Harry to discuss the contract."
+                        "hs_communication_body": "Sent an email to Linda to discuss the contract."
                     },
                     id: testIds[1]
                 },
                 {
                     properties: {
-                        "hs_communication_body": "Sent an email to Harry to discuss the contract."
+                        "hs_communication_body": "Sent an email to Linda to discuss the contract."
                     },
                     id: testIds[2]
                 }
@@ -375,7 +375,7 @@ isolated function testArchiveBatchOfMessages() returns error? {
 isolated function testSearchMessage() returns error? {
     CollectionResponseWithTotalSimplePublicObjectForwardPaging|error response = check hecClient->/search.post(
         payload = {
-            query: "contract"
+            query: "Linda"
         }
     );
 

@@ -21,20 +21,12 @@ import ballerina/http;
 import ballerina/oauth2;
 import ballerina/test;
 
-type HubspotConfig record {|
-    string clientId;
-    string clientSecret;
-    string refreshToken;
-|};
+configurable string clientId = ?;
+configurable string clientSecret = ?;
+configurable string refreshToken = ?;
 
-type ServerConfig record {|
-    boolean isLiveServer;
-|};
+configurable boolean isLiveServer = ?;
 
-configurable HubspotConfig hubspotConfig = ?;
-configurable ServerConfig serverConfig = ?;
-
-final boolean isLiveServer = serverConfig.isLiveServer;
 final string serviceUrl = isLiveServer ? "https://api.hubapi.com/crm/v3/objects/communications" : "http://localhost:9090";
 
 final Client hecClient = check initClient();
@@ -42,9 +34,9 @@ final Client hecClient = check initClient();
 isolated function initClient() returns Client|error {
     if isLiveServer {
         OAuth2RefreshTokenGrantConfig auth = {
-            clientId: hubspotConfig.clientId,
-            clientSecret: hubspotConfig.clientSecret,
-            refreshToken: hubspotConfig.refreshToken,
+            clientId,
+            clientSecret,
+            refreshToken,
             credentialBearer: oauth2:POST_BODY_BEARER
         };
         return check new ({auth}, serviceUrl);

@@ -27,9 +27,14 @@ type HubspotConfig record {|
     string refreshToken;
 |};
 
-configurable HubspotConfig hubspotConfig = ?;
+type ServerConfig record {|
+    boolean isLiveServer;
+|};
 
-final boolean isLiveServer = true;
+configurable HubspotConfig hubspotConfig = ?;
+configurable ServerConfig serverConfig = ?;
+
+final boolean isLiveServer = serverConfig.isLiveServer;
 final string serviceUrl = isLiveServer ? "https://api.hubapi.com/crm/v3/objects/communications" : "http://localhost:9090";
 
 final Client hecClient = check initClient();
@@ -64,7 +69,7 @@ final string testOwnerId = "77366318";
     groups: ["live_test", "mock_tests"]
 }
 isolated function testCreateMessage() returns error? {
-    SimplePublicObject|error response = hecClient->/.post(
+    SimplePublicObject response = check hecClient->/.post(
         payload = {
             properties: {
                 "hs_communication_channel_type": "SMS",
@@ -100,13 +105,12 @@ isolated function testCreateMessage() returns error? {
         }
     );
 
-    test:assertEquals(response is SimplePublicObject, true, "Response is not an instance of SimplePublicObject");
+    test:assertEquals(response?.properties["hs_communication_body"], "Texted Linda to confirm that we're ready to move forward with the contract.", "Response is not an instance of SimplePublicObject");
 
-    if (response is SimplePublicObject) {
-        lock {
-            testCommunicationId = response.id;
-        }
+    lock {
+        testCommunicationId = response.id;
     }
+
 }
 
 @test:Config {
@@ -115,9 +119,9 @@ isolated function testCreateMessage() returns error? {
 }
 isolated function testGetMessages() returns error? {
 
-    CollectionResponseSimplePublicObjectWithAssociationsForwardPaging|error response = hecClient->/.get();
+    CollectionResponseSimplePublicObjectWithAssociationsForwardPaging response = check hecClient->/.get();
 
-    test:assertEquals(response is CollectionResponseSimplePublicObjectWithAssociationsForwardPaging, true, "Response is not an array of BatchResponseSimplePublicObject");
+    test:assertTrue(response?.results.length() > 0, "Response is not an array of BatchResponseSimplePublicObject");
 }
 
 @test:Config {
@@ -132,9 +136,9 @@ isolated function testGetMessageById() returns error? {
         testId = testCommunicationId;
     }
 
-    SimplePublicObjectWithAssociations|error response = hecClient->/[testId].get();
+    SimplePublicObjectWithAssociations response = check hecClient->/[testId].get();
 
-    test:assertEquals(response is SimplePublicObjectWithAssociations, true, "Response is not an instance of SimplePublicObjectWithAssociations");
+    test:assertEquals(response?.properties["hs_object_id"], testId, "Response is not an instance of SimplePublicObjectWithAssociations");
 }
 
 @test:Config {
@@ -148,7 +152,7 @@ isolated function testUpdateMessage() returns error? {
         testId = testCommunicationId;
     }
 
-    SimplePublicObject|error response = hecClient->/[testId].patch(
+    SimplePublicObject response = check hecClient->/[testId].patch(
         payload = {
             properties: {
                 "hs_communication_channel_type": "SMS",
@@ -160,7 +164,7 @@ isolated function testUpdateMessage() returns error? {
         }
     );
 
-    test:assertEquals(response is SimplePublicObject, true, "Response is not an instance of SimplePublicObject");
+    test:assertEquals(response?.properties["hs_communication_body"], "Texted Linda to confirm that we're ready to move forward with the contract.", "Response is not an instance of SimplePublicObject");
 }
 
 @test:Config {
@@ -184,7 +188,7 @@ isolated function testDeleteMessage() returns error? {
 }
 isolated function testCreateBatchOfMessages() returns error? {
 
-    BatchResponseSimplePublicObject|error response = hecClient->/batch/create.post(
+    BatchResponseSimplePublicObject response = check hecClient->/batch/create.post(
         payload = {
             inputs: [
                 {
@@ -268,14 +272,12 @@ isolated function testCreateBatchOfMessages() returns error? {
         }
     );
 
-    if (response is BatchResponseSimplePublicObject) {
-        string[] batchIds = response.results.map((result) => result.id);
-        lock {
-            testBatchIds = batchIds.clone();
-        }
+    string[] batchIds = response.results.map((result) => result.id);
+    lock {
+        testBatchIds = batchIds.clone();
     }
 
-    test:assertEquals(response is BatchResponseSimplePublicObject, true, "Response is not an instance of BatchResponseSimplePublicObject");
+    test:assertTrue(response?.results.length() > 0, "Response is not an instance of BatchResponseSimplePublicObject");
 }
 
 @test:Config {
@@ -316,7 +318,7 @@ isolated function testUpdateBatchOfMessages() returns error? {
         testIds = testBatchIds.clone();
     }
 
-    BatchResponseSimplePublicObject|error response = hecClient->/batch/update.post(
+    BatchResponseSimplePublicObject response = check hecClient->/batch/update.post(
         payload = {
             inputs: [
                 {
@@ -341,7 +343,7 @@ isolated function testUpdateBatchOfMessages() returns error? {
         }
     );
 
-    test:assertEquals(response is BatchResponseSimplePublicObject, true, "Response is not an instance of BatchResponseSimplePublicObject");
+    test:assertTrue(response?.results.length() > 0, "Response is not an instance of BatchResponseSimplePublicObject");
 }
 
 @test:Config {
@@ -373,11 +375,93 @@ isolated function testArchiveBatchOfMessages() returns error? {
     groups: ["live_test", "mock_tests"]
 }
 isolated function testSearchMessage() returns error? {
-    CollectionResponseWithTotalSimplePublicObjectForwardPaging|error response = check hecClient->/search.post(
+    CollectionResponseWithTotalSimplePublicObjectForwardPaging response = check hecClient->/search.post(
         payload = {
             query: "Linda"
         }
     );
 
-    test:assertEquals(response is CollectionResponseWithTotalSimplePublicObjectForwardPaging, true, "Response is not an instance of CollectionResponseSimplePublicObject");
+    test:assertTrue(response?.results.length() > 0, "Response is not an instance of CollectionResponseSimplePublicObject");
+}
+
+@test:Config {
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testInvalidMessageId() returns error? {
+    string testId = "invalid-id";
+
+    SimplePublicObjectWithAssociations|error response = hecClient->/[testId].get();
+
+    test:assertTrue(response is error, "Response is not an error");
+}
+
+@test:Config {
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testInvalidBatchId() returns error? {
+    string testId = "invalid-id";
+
+    BatchResponseSimplePublicObject response = check hecClient->/batch/read.post(
+        payload = {
+            properties: ["hs_timestamp", "hs_communication_channel_type"],
+            propertiesWithHistory: ["hs_communication_body", "hs_createdate"],
+            inputs: [
+                {id: testId}
+            ]
+        }
+    );
+
+    test:assertTrue(response?.results.length() == 0, "Response is not an error");
+}
+
+@test:Config {
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testInvalidBatchUpdate() returns error? {
+    string testId = "invalid-id";
+
+    BatchResponseSimplePublicObject response = check hecClient->/batch/update.post(
+        payload = {
+            inputs: [
+                {
+                    properties: {
+                        "hs_communication_body": "Called Linda to discuss the contract."
+                    },
+                    id: testId
+                }
+            ]
+        }
+    );
+
+    test:assertTrue(response?.results.length() == 0, "Response is not an error");
+}
+
+@test:Config {
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testInvalidBatchArchive() returns error? {
+    string testId = "invalid-id";
+
+    http:Response response = check hecClient->/batch/archive.post(
+        payload = {
+            inputs: [
+                {id: testId}
+            ]
+        }
+    );
+
+    test:assertEquals(response.statusCode == 400, true, "Response is not an error");
+}
+
+@test:Config {
+    groups: ["live_test", "mock_tests"]
+}
+isolated function testInvalidSearch() returns error? {
+    CollectionResponseWithTotalSimplePublicObjectForwardPaging response = check hecClient->/search.post(
+        payload = {
+            query: "invalid-query"
+        }
+    );
+
+    test:assertTrue(response?.total == 0, "Response is not an error");
 }

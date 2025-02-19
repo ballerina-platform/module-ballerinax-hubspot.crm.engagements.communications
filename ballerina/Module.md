@@ -165,6 +165,6 @@ public function main() returns error? {
 
 ## Examples
 
-The `HubSpot CRM Communications` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-hubspot.crm.engagements.communications/tree/main/examples/), covering the following use cases:
+The `HubSpot CRM Engagements Communications` connector provides practical examples illustrating usage in various scenarios. Explore these [examples](https://github.com/module-ballerinax-hubspot.crm.engagements.communications/tree/main/examples/), covering the following use cases:
 
-[//]: # (TODO: Add examples)
+1. [Logging Whatsapp Messages](../examples/whatsapp_message) - This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.

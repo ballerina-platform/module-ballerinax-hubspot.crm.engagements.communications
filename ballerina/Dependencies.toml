@@ -157,6 +157,15 @@ dependencies = [
 
 [[package]]
 org = "ballerina"
+name = "lang.error"
+version = "0.0.0"
+scope = "testOnly"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"}
+]
+
+[[package]]
+org = "ballerina"
 name = "lang.int"
 version = "0.0.0"
 dependencies = [
@@ -213,6 +222,9 @@ dependencies = [
 	{org = "ballerina", name = "lang.value"},
 	{org = "ballerina", name = "observe"}
 ]
+modules = [
+	{org = "ballerina", packageName = "log", moduleName = "log"}
+]
 
 [[package]]
 org = "ballerina"
@@ -236,6 +248,9 @@ dependencies = [
 	{org = "ballerina", name = "log"},
 	{org = "ballerina", name = "time"},
 	{org = "ballerina", name = "url"}
+]
+modules = [
+	{org = "ballerina", packageName = "oauth2", moduleName = "oauth2"}
 ]
 
 [[package]]
@@ -262,6 +277,20 @@ version = "2.6.0"
 dependencies = [
 	{org = "ballerina", name = "jballerina.java"},
 	{org = "ballerina", name = "time"}
+]
+
+[[package]]
+org = "ballerina"
+name = "test"
+version = "0.0.0"
+scope = "testOnly"
+dependencies = [
+	{org = "ballerina", name = "jballerina.java"},
+	{org = "ballerina", name = "lang.array"},
+	{org = "ballerina", name = "lang.error"}
+]
+modules = [
+	{org = "ballerina", packageName = "test", moduleName = "test"}
 ]
 
 [[package]]
@@ -301,6 +330,9 @@ name = "hubspot.crm.engagements.communications"
 version = "1.0.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
+	{org = "ballerina", name = "log"},
+	{org = "ballerina", name = "oauth2"},
+	{org = "ballerina", name = "test"},
 	{org = "ballerina", name = "url"},
 	{org = "ballerinai", name = "observe"}
 ]

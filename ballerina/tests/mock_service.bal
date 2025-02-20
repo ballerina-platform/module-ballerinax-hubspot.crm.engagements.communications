@@ -43,125 +43,126 @@ http:Service mockService = service object {
     # http:DefaultStatusCodeResponse (An error occurred.)
     resource function get .(string? after, string[]? properties, string[]? propertiesWithHistory, string[]? associations, int:Signed32 'limit = 10, boolean archived = false) returns CollectionResponseSimplePublicObjectWithAssociationsForwardPaging {
         CollectionResponseSimplePublicObjectWithAssociationsForwardPaging response = {
-            "results": [
+            results: [
                 {
-                    "id": "77033252581",
-                    "properties": {
+                    id: "77033252581",
+                    properties: {
                         "hs_createdate": "2025-02-17T05:42:30.324Z",
                         "hs_lastmodifieddate": "2025-02-17T05:42:30.695Z",
                         "hs_object_id": "77033252581"
                     },
-                    "createdAt": "2025-02-17T05:42:30.324Z",
-                    "updatedAt": "2025-02-17T05:42:30.695Z",
-                    "archived": false
+                    createdAt: "2025-02-17T05:42:30.324Z",
+                    updatedAt: "2025-02-17T05:42:30.695Z",
+                    archived: false
                 },
                 {
-                    "id": "77033659082",
-                    "properties": {
+                    id: "77033659082",
+                    properties: {
                         "hs_createdate": "2025-02-17T09:37:12.237Z",
                         "hs_lastmodifieddate": "2025-02-17T09:37:12.759Z",
                         "hs_object_id": "77033659082"
                     },
-                    "createdAt": "2025-02-17T09:37:12.237Z",
-                    "updatedAt": "2025-02-17T09:37:12.759Z",
-                    "archived": false
+                    createdAt: "2025-02-17T09:37:12.237Z",
+                    updatedAt: "2025-02-17T09:37:12.759Z",
+                    archived: false
                 },
                 {
-                    "id": "77033660107",
-                    "properties": {
+                    id: "77033660107",
+                    properties: {
                         "hs_createdate": "2025-02-17T09:40:19.594Z",
                         "hs_lastmodifieddate": "2025-02-17T09:40:20.286Z",
                         "hs_object_id": "77033660107"
                     },
-                    "createdAt": "2025-02-17T09:40:19.594Z",
-                    "updatedAt": "2025-02-17T09:40:20.286Z",
-                    "archived": false
+                    createdAt: "2025-02-17T09:40:19.594Z",
+                    updatedAt: "2025-02-17T09:40:20.286Z",
+                    archived: false
                 },
                 {
-                    "id": "77060898503",
-                    "properties": {
+                    id: "77060898503",
+                    properties: {
                         "hs_createdate": "2025-02-17T09:37:11.622Z",
                         "hs_lastmodifieddate": "2025-02-17T09:37:12.279Z",
                         "hs_object_id": "77060898503"
                     },
-                    "createdAt": "2025-02-17T09:37:11.622Z",
-                    "updatedAt": "2025-02-17T09:37:12.279Z",
-                    "archived": false
+                    createdAt: "2025-02-17T09:37:11.622Z",
+                    updatedAt: "2025-02-17T09:37:12.279Z",
+                    archived: false
                 },
                 {
-                    "id": "77060898504",
-                    "properties": {
+                    id: "77060898504",
+                    properties: {
                         "hs_createdate": "2025-02-17T09:37:11.622Z",
                         "hs_lastmodifieddate": "2025-02-17T09:37:12.028Z",
                         "hs_object_id": "77060898504"
                     },
-                    "createdAt": "2025-02-17T09:37:11.622Z",
-                    "updatedAt": "2025-02-17T09:37:12.028Z",
-                    "archived": false
+                    createdAt: "2025-02-17T09:37:11.622Z",
+                    updatedAt: "2025-02-17T09:37:12.028Z",
+                    archived: false
                 },
                 {
-                    "id": "77060898505",
-                    "properties": {
+                    id: "77060898505",
+                    properties: {
                         "hs_createdate": "2025-02-17T09:37:11.622Z",
                         "hs_lastmodifieddate": "2025-02-17T09:37:12.279Z",
                         "hs_object_id": "77060898505"
                     },
-                    "createdAt": "2025-02-17T09:37:11.622Z",
-                    "updatedAt": "2025-02-17T09:37:12.279Z",
-                    "archived": false
+                    createdAt: "2025-02-17T09:37:11.622Z",
+                    updatedAt: "2025-02-17T09:37:12.279Z",
+                    archived: false
                 },
                 {
-                    "id": "77060899528",
-                    "properties": {
+                    id: "77060899528",
+                    properties: {
                         "hs_createdate": "2025-02-17T09:40:19.079Z",
                         "hs_lastmodifieddate": "2025-02-17T09:40:19.715Z",
                         "hs_object_id": "77060899528"
                     },
-                    "createdAt": "2025-02-17T09:40:19.079Z",
-                    "updatedAt": "2025-02-17T09:40:19.715Z",
-                    "archived": false
+                    createdAt: "2025-02-17T09:40:19.079Z",
+                    updatedAt: "2025-02-17T09:40:19.715Z",
+                    archived: false
                 },
                 {
-                    "id": "77064474346",
-                    "properties": {
+                    id: "77064474346",
+                    properties: {
                         "hs_createdate": "2025-02-17T05:40:33.136Z",
                         "hs_lastmodifieddate": "2025-02-17T05:40:33.797Z",
                         "hs_object_id": "77064474346"
                     },
-                    "createdAt": "2025-02-17T05:40:33.136Z",
-                    "updatedAt": "2025-02-17T05:40:33.797Z",
-                    "archived": false
+                    createdAt: "2025-02-17T05:40:33.136Z",
+                    updatedAt: "2025-02-17T05:40:33.797Z",
+                    archived: false
                 },
                 {
-                    "id": "77064688348",
-                    "properties": {
+                    id: "77064688348",
+                    properties: {
                         "hs_createdate": "2025-02-17T11:17:33.698Z",
                         "hs_lastmodifieddate": "2025-02-17T11:17:34.155Z",
                         "hs_object_id": "77064688348"
                     },
-                    "createdAt": "2025-02-17T11:17:33.698Z",
-                    "updatedAt": "2025-02-17T11:17:34.155Z",
-                    "archived": false
+                    createdAt: "2025-02-17T11:17:33.698Z",
+                    updatedAt: "2025-02-17T11:17:34.155Z",
+                    archived: false
                 },
                 {
-                    "id": "77082006227",
-                    "properties": {
+                    id: "77082006227",
+                    properties: {
                         "hs_createdate": "2025-02-17T08:43:21.034Z",
                         "hs_lastmodifieddate": "2025-02-17T08:43:21.518Z",
                         "hs_object_id": "77082006227"
                     },
-                    "createdAt": "2025-02-17T08:43:21.034Z",
-                    "updatedAt": "2025-02-17T08:43:21.518Z",
-                    "archived": false
+                    createdAt: "2025-02-17T08:43:21.034Z",
+                    updatedAt: "2025-02-17T08:43:21.518Z",
+                    archived: false
                 }
             ],
-            "paging": {
-                "next": {
-                    "after": "77082006228",
-                    "link": "https://api.hubapi.com/crm/v3/objects/communications?after=77082006228"
+            paging: {
+                next: {
+                    after: "77082006228",
+                    link: "https://api.hubapi.com/crm/v3/objects/communications?after=77082006228"
                 }
             }
         };
+
         return response;
     }
 
@@ -179,15 +180,15 @@ http:Service mockService = service object {
     resource function get [string communicationId](string[]? properties, string[]? propertiesWithHistory, string[]? associations, string? idProperty, boolean archived = false) returns SimplePublicObjectWithAssociations|error {
         if (communicationId == "77255754471") {
             SimplePublicObjectWithAssociations response = {
-                "id": "77255754471",
-                "properties": {
+                id: "77255754471",
+                properties: {
                     "hs_createdate": "2025-02-18T04:22:43.937Z",
                     "hs_lastmodifieddate": "2025-02-18T04:22:43.937Z",
                     "hs_object_id": "77255754471"
                 },
-                "createdAt": "2025-02-17T05:42:30.324Z",
-                "updatedAt": "2025-02-17T05:42:30.695Z",
-                "archived": false
+                createdAt: "2025-02-17T05:42:30.324Z",
+                updatedAt: "2025-02-17T05:42:30.695Z",
+                archived: false
             };
 
             return response;
@@ -287,11 +288,11 @@ http:Service mockService = service object {
     # http:DefaultStatusCodeResponse (An error occurred.)
     resource function post batch/create(@http:Payload BatchInputSimplePublicObjectInputForCreate payload) returns BatchResponseSimplePublicObject {
         BatchResponseSimplePublicObject response = {
-            "status": "COMPLETE",
-            "results": [
+            status: "COMPLETE",
+            results: [
                 {
-                    "id": "77466931932",
-                    "properties": {
+                    id: "77466931932",
+                    properties: {
                         "hs_all_owner_ids": "77366318",
                         "hs_body_preview": "Called Harry to discuss the contract.",
                         "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
@@ -310,13 +311,13 @@ http:Service mockService = service object {
                         "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
                         "hubspot_owner_id": "77366318"
                     },
-                    "createdAt": "2025-02-18T05:51:18.584Z",
-                    "updatedAt": "2025-02-18T05:51:18.584Z",
-                    "archived": false
+                    createdAt: "2025-02-18T05:51:18.584Z",
+                    updatedAt: "2025-02-18T05:51:18.584Z",
+                    archived: false
                 },
                 {
-                    "id": "77466931934",
-                    "properties": {
+                    id: "77466931934",
+                    properties: {
                         "hs_all_owner_ids": "77366318",
                         "hs_body_preview": "Called Harry to discuss the contract.",
                         "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
@@ -335,13 +336,13 @@ http:Service mockService = service object {
                         "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
                         "hubspot_owner_id": "77366318"
                     },
-                    "createdAt": "2025-02-18T05:51:18.584Z",
-                    "updatedAt": "2025-02-18T05:51:18.584Z",
-                    "archived": false
+                    createdAt: "2025-02-18T05:51:18.584Z",
+                    updatedAt: "2025-02-18T05:51:18.584Z",
+                    archived: false
                 },
                 {
-                    "id": "77466931933",
-                    "properties": {
+                    id: "77466931933",
+                    properties: {
                         "hs_all_owner_ids": "77366318",
                         "hs_body_preview": "Called Harry to discuss the contract.",
                         "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
@@ -360,14 +361,15 @@ http:Service mockService = service object {
                         "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
                         "hubspot_owner_id": "77366318"
                     },
-                    "createdAt": "2025-02-18T05:51:18.584Z",
-                    "updatedAt": "2025-02-18T05:51:18.584Z",
-                    "archived": false
+                    createdAt: "2025-02-18T05:51:18.584Z",
+                    updatedAt: "2025-02-18T05:51:18.584Z",
+                    archived: false
                 }
             ],
-            "startedAt": "2025-02-18T05:51:18.568Z",
-            "completedAt": "2025-02-18T05:51:18.955Z"
+            startedAt: "2025-02-18T05:51:18.568Z",
+            completedAt: "2025-02-18T05:51:18.955Z"
         };
+
         return response;
     }
 
@@ -382,121 +384,121 @@ http:Service mockService = service object {
         BatchResponseSimplePublicObject response;
         if (payload.inputs[0].id == "invalid-id") {
             response = {
-                "status": "COMPLETE",
-                "results": [],
+                status: "COMPLETE",
+                results: [],
                 "numErrors": 1,
                 "errors": [
                     {
-                        "status": "error",
-                        "category": "OBJECT_NOT_FOUND",
-                        "message": "Could not get some COMMUNICATION objects, they may be deleted or not exist. Check that ids are valid.",
-                        "context": {
-                            "ids": [
+                        status: "error",
+                        category: "OBJECT_NOT_FOUND",
+                        message: "Could not get some COMMUNICATION objects, they may be deleted or not exist. Check that ids are valid.",
+                        context: {
+                            ids: [
                                 "invalid"
                             ]
                         }
                     }
                 ],
-                "startedAt": "2025-02-18T09:12:17Z",
-                "completedAt": "2025-02-18T09:12:17.006Z"
+                startedAt: "2025-02-18T09:12:17Z",
+                completedAt: "2025-02-18T09:12:17.006Z"
             };
         } else {
             response = {
-                "status": "COMPLETE",
-                "results": [
+                status: "COMPLETE",
+                results: [
                     {
-                        "id": "77466931933",
-                        "properties": {
+                        id: "77466931933",
+                        properties: {
                             "hs_communication_channel_type": "WHATS_APP",
                             "hs_lastmodifieddate": "2025-02-18T05:51:19.141Z",
                             "hs_object_id": "77466931933",
                             "hs_timestamp": "2022-11-12T15:48:22Z"
                         },
-                        "propertiesWithHistory": {
+                        propertiesWithHistory: {
                             "hs_communication_body": [
                                 {
-                                    "value": "Called Harry to discuss the contract.",
-                                    "timestamp": "2025-02-18T05:51:18.584Z",
-                                    "sourceType": "INTEGRATION",
-                                    "sourceId": "8113404"
+                                    value: "Called Harry to discuss the contract.",
+                                    timestamp: "2025-02-18T05:51:18.584Z",
+                                    sourceType: "INTEGRATION",
+                                    sourceId: "8113404"
                                 }
                             ],
                             "hs_createdate": [
                                 {
-                                    "value": "2025-02-18T05:51:18.584Z",
-                                    "timestamp": "2025-02-18T05:51:18.584Z",
-                                    "sourceType": "INTEGRATION",
-                                    "sourceId": "8113404"
+                                    value: "2025-02-18T05:51:18.584Z",
+                                    timestamp: "2025-02-18T05:51:18.584Z",
+                                    sourceType: "INTEGRATION",
+                                    sourceId: "8113404"
                                 }
                             ]
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T05:51:19.141Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T05:51:19.141Z",
+                        archived: false
                     },
                     {
-                        "id": "77466931932",
-                        "properties": {
+                        id: "77466931932",
+                        properties: {
                             "hs_communication_channel_type": "SMS",
                             "hs_lastmodifieddate": "2025-02-18T05:51:19.141Z",
                             "hs_object_id": "77466931932",
                             "hs_timestamp": "2022-11-12T15:48:22Z"
                         },
-                        "propertiesWithHistory": {
+                        propertiesWithHistory: {
                             "hs_communication_body": [
                                 {
-                                    "value": "Called Harry to discuss the contract.",
-                                    "timestamp": "2025-02-18T05:51:18.584Z",
-                                    "sourceType": "INTEGRATION",
-                                    "sourceId": "8113404"
+                                    value: "Called Harry to discuss the contract.",
+                                    timestamp: "2025-02-18T05:51:18.584Z",
+                                    sourceType: "INTEGRATION",
+                                    sourceId: "8113404"
                                 }
                             ],
                             "hs_createdate": [
                                 {
-                                    "value": "2025-02-18T05:51:18.584Z",
-                                    "timestamp": "2025-02-18T05:51:18.584Z",
-                                    "sourceType": "INTEGRATION",
-                                    "sourceId": "8113404"
+                                    value: "2025-02-18T05:51:18.584Z",
+                                    timestamp: "2025-02-18T05:51:18.584Z",
+                                    sourceType: "INTEGRATION",
+                                    sourceId: "8113404"
                                 }
                             ]
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T05:51:19.141Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T05:51:19.141Z",
+                        archived: false
                     },
                     {
-                        "id": "77466931934",
-                        "properties": {
+                        id: "77466931934",
+                        properties: {
                             "hs_communication_channel_type": "LINKEDIN_MESSAGE",
                             "hs_lastmodifieddate": "2025-02-18T05:51:19.141Z",
                             "hs_object_id": "77466931934",
                             "hs_timestamp": "2022-11-12T15:48:22Z"
                         },
-                        "propertiesWithHistory": {
+                        propertiesWithHistory: {
                             "hs_communication_body": [
                                 {
-                                    "value": "Called Harry to discuss the contract.",
-                                    "timestamp": "2025-02-18T05:51:18.584Z",
-                                    "sourceType": "INTEGRATION",
-                                    "sourceId": "8113404"
+                                    value: "Called Harry to discuss the contract.",
+                                    timestamp: "2025-02-18T05:51:18.584Z",
+                                    sourceType: "INTEGRATION",
+                                    sourceId: "8113404"
                                 }
                             ],
                             "hs_createdate": [
                                 {
-                                    "value": "2025-02-18T05:51:18.584Z",
-                                    "timestamp": "2025-02-18T05:51:18.584Z",
-                                    "sourceType": "INTEGRATION",
-                                    "sourceId": "8113404"
+                                    value: "2025-02-18T05:51:18.584Z",
+                                    timestamp: "2025-02-18T05:51:18.584Z",
+                                    sourceType: "INTEGRATION",
+                                    sourceId: "8113404"
                                 }
                             ]
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T05:51:19.141Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T05:51:19.141Z",
+                        archived: false
                     }
                 ],
-                "startedAt": "2025-02-18T06:05:18.015Z",
-                "completedAt": "2025-02-18T06:05:18.031Z"
+                startedAt: "2025-02-18T06:05:18.015Z",
+                completedAt: "2025-02-18T06:05:18.031Z"
             };
         }
         return response;
@@ -513,31 +515,31 @@ http:Service mockService = service object {
 
         if (payload.inputs[0].id == "invalid-id") {
             response = {
-                "status": "COMPLETE",
-                "results": [],
+                status: "COMPLETE",
+                results: [],
                 "numErrors": 1,
                 "errors": [
                     {
-                        "status": "error",
-                        "category": "OBJECT_NOT_FOUND",
-                        "message": "Could not get some COMMUNICATION objects, they may be deleted or not exist. Check that ids are valid.",
-                        "context": {
-                            "ids": [
+                        status: "error",
+                        category: "OBJECT_NOT_FOUND",
+                        message: "Could not get some COMMUNICATION objects, they may be deleted or not exist. Check that ids are valid.",
+                        context: {
+                            ids: [
                                 "invalid"
                             ]
                         }
                     }
                 ],
-                "startedAt": "2025-02-18T09:17:15.266Z",
-                "completedAt": "2025-02-18T09:17:15.273Z"
+                startedAt: "2025-02-18T09:17:15.266Z",
+                completedAt: "2025-02-18T09:17:15.273Z"
             };
         } else {
             response = {
-                "status": "COMPLETE",
-                "results": [
+                status: "COMPLETE",
+                results: [
                     {
-                        "id": "77466931932",
-                        "properties": {
+                        id: "77466931932",
+                        properties: {
                             "hs_all_owner_ids": "77366318",
                             "hs_body_preview": "Called Linda to discuss the contract.",
                             "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Linda to discuss the contract.\n </body>\n</html>",
@@ -553,13 +555,13 @@ http:Service mockService = service object {
                             "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
                             "hubspot_owner_id": "77366318"
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T06:07:54.506Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T06:07:54.506Z",
+                        archived: false
                     },
                     {
-                        "id": "77466931933",
-                        "properties": {
+                        id: "77466931933",
+                        properties: {
                             "hs_all_owner_ids": "77366318",
                             "hs_body_preview": "Sent an email to Linda to discuss the contract.",
                             "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Sent an email to Linda to discuss the contract.\n </body>\n</html>",
@@ -575,13 +577,13 @@ http:Service mockService = service object {
                             "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
                             "hubspot_owner_id": "77366318"
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T06:09:21.372Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T06:09:21.372Z",
+                        archived: false
                     },
                     {
-                        "id": "77466931934",
-                        "properties": {
+                        id: "77466931934",
+                        properties: {
                             "hs_all_owner_ids": "77366318",
                             "hs_body_preview": "Sent an email to Linda to discuss the contract.",
                             "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Sent an email to Linda to discuss the contract.\n </body>\n</html>",
@@ -597,13 +599,13 @@ http:Service mockService = service object {
                             "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
                             "hubspot_owner_id": "77366318"
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T06:09:21.372Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T06:09:21.372Z",
+                        archived: false
                     }
                 ],
-                "startedAt": "2025-02-18T06:09:21.352Z",
-                "completedAt": "2025-02-18T06:09:21.484Z"
+                startedAt: "2025-02-18T06:09:21.352Z",
+                completedAt: "2025-02-18T06:09:21.484Z"
             };
         }
         return response;
@@ -628,44 +630,44 @@ http:Service mockService = service object {
         if (payload.query == "invalid-query") {
             response = {
                 "total": 0,
-                "results": []
+                results: []
             };
         } else {
             response = {
                 "total": 3,
-                "results": [
+                results: [
                     {
-                        "id": "77466931932",
-                        "properties": {
+                        id: "77466931932",
+                        properties: {
                             "hs_createdate": "2025-02-18T05:51:18.584Z",
                             "hs_lastmodifieddate": "2025-02-18T06:07:54.506Z",
                             "hs_object_id": "77466931932"
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T06:07:54.506Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T06:07:54.506Z",
+                        archived: false
                     },
                     {
-                        "id": "77466931933",
-                        "properties": {
+                        id: "77466931933",
+                        properties: {
                             "hs_createdate": "2025-02-18T05:51:18.584Z",
                             "hs_lastmodifieddate": "2025-02-18T06:09:21.372Z",
                             "hs_object_id": "77466931933"
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T06:09:21.372Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T06:09:21.372Z",
+                        archived: false
                     },
                     {
-                        "id": "77466931934",
-                        "properties": {
+                        id: "77466931934",
+                        properties: {
                             "hs_createdate": "2025-02-18T05:51:18.584Z",
                             "hs_lastmodifieddate": "2025-02-18T06:09:21.372Z",
                             "hs_object_id": "77466931934"
                         },
-                        "createdAt": "2025-02-18T05:51:18.584Z",
-                        "updatedAt": "2025-02-18T06:09:21.372Z",
-                        "archived": false
+                        createdAt: "2025-02-18T05:51:18.584Z",
+                        updatedAt: "2025-02-18T06:09:21.372Z",
+                        archived: false
                     }
                 ]
             };

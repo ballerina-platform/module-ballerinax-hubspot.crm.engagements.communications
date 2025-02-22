@@ -400,7 +400,7 @@ isolated function testInvalidBatchId() returns error? {
         }
     );
 
-    test:assertTrue(response?.results.length() == 0, "Response is not an error");
+    test:assertEquals(response?.results.length(), 0, "Response is not an error");
 }
 
 @test:Config {
@@ -422,7 +422,7 @@ isolated function testInvalidBatchUpdate() returns error? {
         }
     );
 
-    test:assertTrue(response?.results.length() == 0, "Response is not an error");
+    test:assertEquals(response?.results.length(), 0, "Response is not an error");
 }
 
 @test:Config {
@@ -452,5 +452,5 @@ isolated function testInvalidSearch() returns error? {
         }
     );
 
-    test:assertTrue(response?.total == 0, "Response is not an error");
+    test:assertEquals(response?.total, 0, "Response is not an error");
 }

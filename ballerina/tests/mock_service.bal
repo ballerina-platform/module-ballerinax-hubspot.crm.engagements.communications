@@ -178,7 +178,7 @@ http:Service mockService = service object {
     # http:Ok (successful operation)
     # http:DefaultStatusCodeResponse (An error occurred.)
     resource function get [string communicationId](string[]? properties, string[]? propertiesWithHistory, string[]? associations, string? idProperty, boolean archived = false) returns SimplePublicObjectWithAssociations|error {
-        if (communicationId == "77255754471") {
+        if communicationId == "77255754471" {
             SimplePublicObjectWithAssociations response = {
                 id: "77255754471",
                 properties: {
@@ -274,7 +274,7 @@ http:Service mockService = service object {
     # http:NoContent (No content)
     # http:DefaultStatusCodeResponse (An error occurred.)
     resource function post batch/archive(@http:Payload BatchInputSimplePublicObjectId payload) returns http:NoContent|http:BadRequest {
-        if (payload.inputs[0].id == "invalid-id") {
+        if payload.inputs[0].id == "invalid-id" {
             return http:BAD_REQUEST;
         }
         return http:NO_CONTENT;
@@ -382,7 +382,7 @@ http:Service mockService = service object {
     # http:DefaultStatusCodeResponse (An error occurred.)
     resource function post batch/read(@http:Payload BatchReadInputSimplePublicObjectId payload, boolean archived = false) returns BatchResponseSimplePublicObject|error {
         BatchResponseSimplePublicObject response;
-        if (payload.inputs[0].id == "invalid-id") {
+        if payload.inputs[0].id == "invalid-id" {
             response = {
                 status: "COMPLETE",
                 results: [],
@@ -513,7 +513,7 @@ http:Service mockService = service object {
     resource function post batch/update(@http:Payload BatchInputSimplePublicObjectBatchInput payload) returns BatchResponseSimplePublicObject|error {
         BatchResponseSimplePublicObject response;
 
-        if (payload.inputs[0].id == "invalid-id") {
+        if payload.inputs[0].id == "invalid-id" {
             response = {
                 status: "COMPLETE",
                 results: [],
@@ -627,7 +627,7 @@ http:Service mockService = service object {
     # http:DefaultStatusCodeResponse (An error occurred.)
     resource function post search(@http:Payload PublicObjectSearchRequest payload) returns CollectionResponseSimplePublicObjectWithAssociationsForwardPaging|error {
         CollectionResponseSimplePublicObjectWithAssociationsForwardPaging response;
-        if (payload.query == "invalid-query") {
+        if payload.query == "invalid-query" {
             response = {
                 "total": 0,
                 results: []

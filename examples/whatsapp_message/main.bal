@@ -48,7 +48,7 @@ public function main() returns error? {
             properties: {
                 "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
                 "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
-                "hs_communication_body": "Check our latest products with 20% off!",
+                "hs_communication_body": "Hello Maria, you can find the requested product catalog attached here.",
                 "hs_timestamp": time:utcToString(time:utcNow()),
                 "hubspot_owner_id": HUBSPOT_OWNER_ID
             },
@@ -62,17 +62,6 @@ public function main() returns error? {
                     ],
                     to: {
                         id: HUBSPOT_ASSOCIATE_ID_1
-                    }
-                },
-                {
-                    types: [
-                        {
-                            associationCategory: "HUBSPOT_DEFINED",
-                            associationTypeId: 81
-                        }
-                    ],
-                    to: {
-                        id: HUBSPOT_ASSOCIATE_ID_2
                     }
                 }
             ]
@@ -89,7 +78,7 @@ public function main() returns error? {
                     properties: {
                         "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
                         "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
-                        "hs_communication_body": "Check our latest products with 20% off!",
+                        "hs_communication_body": "We have scheduled a meeting to discuss about the quotation. Hope you will be available on Friday night",
                         "hs_timestamp": time:utcToString(time:utcNow()),
                         "hubspot_owner_id": HUBSPOT_OWNER_ID
                     },
@@ -122,7 +111,7 @@ public function main() returns error? {
                     properties: {
                         "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
                         "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
-                        "hs_communication_body": "Don't miss our new year offers! Visit nearest showroom now.",
+                        "hs_communication_body": "Brian said that he won't available on Friday night, shall we reschedule?",
                         "hs_timestamp": time:utcToString(time:utcNow()),
                         "hubspot_owner_id": HUBSPOT_OWNER_ID
                     },
@@ -135,7 +124,7 @@ public function main() returns error? {
                                 }
                             ],
                             to: {
-                                id: HUBSPOT_ASSOCIATE_ID_2
+                                id: HUBSPOT_ASSOCIATE_ID_1
                             }
                         }
                     ]

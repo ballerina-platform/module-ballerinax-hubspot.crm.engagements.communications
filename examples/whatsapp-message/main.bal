@@ -32,7 +32,7 @@ hscommunications:ConnectionConfig config = {
     }
 };
 
-final hscommunications:Client baseClient = check new (config);
+final hscommunications:Client hubspot = check new (config);
 
 final string COMMUNICATION_CHANNEL_TYPE = "WHATS_APP";
 final string COMMUNICATION_LOGGED_FROM = "CRM";
@@ -43,7 +43,7 @@ final string HUBSPOT_ASSOCIATE_ID_2 = "83849299661";
 string communicationId = "";
 
 public function main() returns error? {
-    hscommunications:SimplePublicObject postCommunication = check baseClient->/.post(
+    hscommunications:SimplePublicObject postCommunication = check hubspot->/.post(
         payload = {
             properties: {
                 "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
@@ -71,7 +71,7 @@ public function main() returns error? {
     communicationId = postCommunication.id;
     io:println("Posted communication: ", postCommunication, "\n");
 
-    hscommunications:BatchResponseSimplePublicObject postBatchOfCommunications = check baseClient->/batch/create.post(
+    hscommunications:BatchResponseSimplePublicObject postBatchOfCommunications = check hubspot->/batch/create.post(
         payload = {
             inputs: [
                 {
@@ -135,7 +135,7 @@ public function main() returns error? {
 
     io:println("Posted batch of communications: ", postBatchOfCommunications, "\n");
 
-    hscommunications:CollectionResponseWithTotalSimplePublicObjectForwardPaging getWhatsappMessages = check baseClient->/search.post(
+    hscommunications:CollectionResponseWithTotalSimplePublicObjectForwardPaging getWhatsappMessages = check hubspot->/search.post(
         payload = {
             filterGroups: [
                 {

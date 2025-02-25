@@ -2,7 +2,7 @@
 
 The `ballerinax/hubspot.crm.engagements.communications` connector provides practical examples illustrating usage in various scenarios.
 
-1. [Logging Whatsapp Messages](../examples/whatsapp_message) - This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.
+1. [Logging Whatsapp Messages](https://github.com/ballerina-platform/module-ballerinax-hubspot.crm.engagements.communications/tree/main/examples/whatsapp-message) - This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.
 
 ## Prerequisites
 

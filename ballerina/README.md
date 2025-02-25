@@ -18,7 +18,7 @@ If you have an account already, login to the [HubSpot developer portal](https://
 
 Within app developer accounts, you can create a [developer test account](https://developers.hubspot.com/beta-docs/getting-started/account-types#developer-test-accounts) under your account to test apps and integrations without affecting any real HubSpot data.
 
-> **Note:** These accounts are only for development and testing purposes. In production you should not use Developer Test Accounts.
+> **Note:** These accounts are only for development and testing purposes. In production you should not use developer test accounts.
 
 
 1. Go to the Test accounts section from the left sidebar.

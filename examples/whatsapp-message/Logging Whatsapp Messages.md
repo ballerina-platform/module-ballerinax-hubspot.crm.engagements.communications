@@ -1,4 +1,4 @@
-# [Logging WhatsApp Messages](https://github.com/ballerina-platform/module-ballerinax-hubspot.crm.engagements.communications/tree/main/examples/whatsapp-message)
+# Logging WhatsApp Messages
 
 This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.
 

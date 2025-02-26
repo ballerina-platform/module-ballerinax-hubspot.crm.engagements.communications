@@ -1,4 +1,0 @@
-clientId = "<HUBSPOT_CLIENT_ID>"
-clientSecret = "<HUBSPOT_CLIENT_SECRET>"
-refreshToken = "<HUBSPOT_REFRESH_TOKEN>"
-isLiveServer = false

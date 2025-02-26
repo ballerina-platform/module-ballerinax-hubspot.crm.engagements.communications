@@ -317,8 +317,8 @@ modules = [
 ]
 
 [[package]]
-org = "wso2"
-name = "whatsapp_message"
+org = "himesh"
+name = "linkedin_message"
 version = "0.1.0"
 dependencies = [
 	{org = "ballerina", name = "http"},
@@ -329,6 +329,6 @@ dependencies = [
 	{org = "ballerinax", name = "hubspot.crm.engagements.communications"}
 ]
 modules = [
-	{org = "wso2", packageName = "whatsapp_message", moduleName = "whatsapp_message"}
+	{org = "himesh", packageName = "linkedin_message", moduleName = "linkedin_message"}
 ]
 

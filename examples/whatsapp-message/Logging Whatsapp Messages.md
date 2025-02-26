@@ -1,12 +1,10 @@
-# Examples
+# [Logging WhatsApp Messages](https://github.com/ballerina-platform/module-ballerinax-hubspot.crm.engagements.communications/tree/main/examples/whatsapp-message)
 
-The `ballerinax/hubspot.crm.engagements.communications` connector provides practical examples illustrating usage in various scenarios.
-
-1. [Logging WhatsApp Messages](https://github.com/ballerina-platform/module-ballerinax-hubspot.crm.engagements.communications/tree/main/examples/whatsapp-message) - This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.
+This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.
 
 ## Prerequisites
 
-1. Generate HubSpot credentials to authenticate the connector as described in the [Setup guide](../ballerina/README.md#setup-guide).
+1. Generate HubSpot credentials to authenticate the connector as described in the [Setup guide](https://github.com/ballerina-platform/module-ballerinax-hubspot.crm.engagements.communications/tree/main/ballerina/README.md#setup-guide).
 
 2. For each example, create a `Config.toml` file the related configuration. Here's an example of how your `Config.toml` file should look:
 
@@ -14,6 +12,7 @@ The `ballerinax/hubspot.crm.engagements.communications` connector provides pract
     clientId = <Client Id>
     clientSecret = <Client Secret>
     refreshToken = <Refresh Token>
+    ```
 
 ## Running an example
 

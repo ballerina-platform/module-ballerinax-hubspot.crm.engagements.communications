@@ -14,6 +14,7 @@
 // specific language governing permissions and limitations
 // under the License.
 
+import ballerina/http;
 import ballerina/io;
 import ballerina/oauth2;
 import ballerina/time;
@@ -68,69 +69,9 @@ public function main() returns error? {
 
     io:println("Posted communication: ", postCommunication, "\n");
 
-    hscommunications:BatchResponseSimplePublicObject postBatchOfCommunications = check hubspot->/batch/create.post(
-        {
-            inputs: [
-                {
-                    properties: {
-                        "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
-                        "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
-                        "hs_communication_body": "We have scheduled a meeting to discuss about the quotation. Hope you will be available on Friday night",
-                        "hs_timestamp": time:utcToString(time:utcNow()),
-                        "hubspot_owner_id": HUBSPOT_OWNER_ID
-                    },
-                    associations: [
-                        {
-                            types: [
-                                {
-                                    associationCategory: "HUBSPOT_DEFINED",
-                                    associationTypeId: 81
-                                }
-                            ],
-                            to: {
-                                id: HUBSPOT_ASSOCIATE_ID_1
-                            }
-                        },
-                        {
-                            types: [
-                                {
-                                    associationCategory: "HUBSPOT_DEFINED",
-                                    associationTypeId: 81
-                                }
-                            ],
-                            to: {
-                                id: HUBSPOT_ASSOCIATE_ID_2
-                            }
-                        }
-                    ]
-                },
-                {
-                    properties: {
-                        "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
-                        "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
-                        "hs_communication_body": "Brian said that he won't available on Friday night, shall we reschedule?",
-                        "hs_timestamp": time:utcToString(time:utcNow()),
-                        "hubspot_owner_id": HUBSPOT_OWNER_ID
-                    },
-                    associations: [
-                        {
-                            types: [
-                                {
-                                    associationCategory: "HUBSPOT_DEFINED",
-                                    associationTypeId: 81
-                                }
-                            ],
-                            to: {
-                                id: HUBSPOT_ASSOCIATE_ID_1
-                            }
-                        }
-                    ]
-                }
-            ]
-        }
-    );
+    hscommunications:SimplePublicObject getCommunication = check hubspot->/[postCommunication?.id].get();
 
-    io:println("Posted batch of communications: ", postBatchOfCommunications, "\n");
+    io:println("Retrieved communication: ", getCommunication, "\n");
 
     hscommunications:CollectionResponseWithTotalSimplePublicObjectForwardPaging getWhatsappMessages = check hubspot->/search.post(
         {
@@ -150,4 +91,22 @@ public function main() returns error? {
     );
 
     io:println("Logged batch of communications: ", getWhatsappMessages, "\n");
+
+    hscommunications:SimplePublicObject updateCommunication = check hubspot->/[postCommunication?.id].patch(
+        {
+            properties: {
+                "hs_communication_body": "Hello Maria, you can find the requested product catalog attached here. Please let me know if you need any further assistance."
+            }
+        }
+    );
+
+    io:println("Updated communication: ", updateCommunication, "\n");
+
+    http:Response deleteCommunication = check hubspot->/[postCommunication?.id].delete();
+
+    if (deleteCommunication.statusCode == 204) {
+        io:println("Deleted communication: ", updateCommunication.id, "\n");
+    } else {
+        io:println("Failed to delete communication: ", updateCommunication.id, "\n");
+    }
 }

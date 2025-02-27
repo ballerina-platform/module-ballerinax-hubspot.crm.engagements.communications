@@ -1,6 +1,6 @@
 # Logging WhatsApp Messages
 
-This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications, associate them with specific HubSpot records, post a batch of communications, and retrieve logged WhatsApp communications using search filters.
+This example demonstrates the usage of the HubSpot CRM Communications connector to log WhatsApp messages as CRM communications. It includes posting a communication, associating it with a specific HubSpot record, retrieving the logged communication, searching for WhatsApp messages using filters, updating a communication, and deleting a communication.
 
 ## Prerequisites
 

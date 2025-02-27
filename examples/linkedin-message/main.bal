@@ -148,7 +148,7 @@ public function main() returns error? {
         }
     );
 
-    if (deleteBatchOfCommunications.statusCode == 204) {
+    if deleteBatchOfCommunications.statusCode == 204 {
         io:println("Deleted communication successfully");
     } else {
         io:println("Failed to delete communication");

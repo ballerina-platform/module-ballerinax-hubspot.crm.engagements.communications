@@ -18,11 +18,11 @@ import ballerina/http;
 import ballerina/oauth2;
 import ballerina/test;
 
-configurable string clientId = ?;
-configurable string clientSecret = ?;
-configurable string refreshToken = ?;
+configurable string clientId = "<HUBSPOT_CLIENT_ID>";
+configurable string clientSecret = "<HUBSPOT_CLIENT_SECRET>";
+configurable string refreshToken = "<HUBSPOT_REFRESH_TOKEN>";
 
-configurable boolean isLiveServer = ?;
+configurable boolean isLiveServer = false;
 
 final string serviceUrl = isLiveServer ? "https://api.hubapi.com/crm/v3/objects/communications" : "http://localhost:9090";
 

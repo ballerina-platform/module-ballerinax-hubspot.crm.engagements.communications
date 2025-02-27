@@ -105,8 +105,8 @@ public function main() returns error? {
     http:Response deleteCommunication = check hubspot->/[postCommunication?.id].delete();
 
     if (deleteCommunication.statusCode == 204) {
-        io:println("Deleted communication: ", updateCommunication.id, "\n");
+        io:println("Deleted communication successfully\n");
     } else {
-        io:println("Failed to delete communication: ", updateCommunication.id, "\n");
+        io:println("Failed to delete communication\n");
     }
 }

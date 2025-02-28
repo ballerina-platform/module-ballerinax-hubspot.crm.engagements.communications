@@ -59,11 +59,11 @@ isolated function testCreateMessage() returns error? {
     SimplePublicObject response = check hubspot->/.post(
         payload = {
             properties: {
-                "hs_communication_channel_type": "SMS",
-                "hs_communication_logged_from": "CRM",
-                "hs_communication_body": "Texted Linda to confirm that we're ready to move forward with the contract.",
-                "hs_timestamp": "2022-11-12T15:48:22Z",
-                "hubspot_owner_id": testOwnerId
+                hs_communication_channel_type: "SMS",
+                hs_communication_logged_from: "CRM",
+                hs_communication_body: "Texted Linda to confirm that we're ready to move forward with the contract.",
+                hs_timestamp: "2022-11-12T15:48:22Z",
+                hubspot_owner_id: testOwnerId
             },
             associations: [
                 {
@@ -92,7 +92,7 @@ isolated function testCreateMessage() returns error? {
         }
     );
 
-    test:assertEquals(response?.properties["hs_communication_body"], "Texted Linda to confirm that we're ready to move forward with the contract.", "Response is not an instance of SimplePublicObject");
+    test:assertEquals(response?.properties?.hs_communication_body, "Texted Linda to confirm that we're ready to move forward with the contract.", "Response is not an instance of SimplePublicObject");
 
     lock {
         testCommunicationId = response.id;
@@ -125,7 +125,7 @@ isolated function testGetMessageById() returns error? {
 
     SimplePublicObjectWithAssociations response = check hubspot->/[testId].get();
 
-    test:assertEquals(response?.properties["hs_object_id"], testId, "Response is not an instance of SimplePublicObjectWithAssociations");
+    test:assertEquals(response?.properties?.hs_object_id, testId, "Response is not an instance of SimplePublicObjectWithAssociations");
 }
 
 @test:Config {
@@ -142,16 +142,16 @@ isolated function testUpdateMessage() returns error? {
     SimplePublicObject response = check hubspot->/[testId].patch(
         payload = {
             properties: {
-                "hs_communication_channel_type": "SMS",
-                "hs_communication_logged_from": "CRM",
-                "hs_communication_body": "Texted Linda to confirm that we're ready to move forward with the contract.",
-                "hs_timestamp": "2022-11-12T15:48:22Z",
-                "hubspot_owner_id": testOwnerId
+                hs_communication_channel_type: "SMS",
+                hs_communication_logged_from: "CRM",
+                hs_communication_body: "Texted Linda to confirm that we're ready to move forward with the contract.",
+                hs_timestamp: "2022-11-12T15:48:22Z",
+                hubspot_owner_id: testOwnerId
             }
         }
     );
 
-    test:assertEquals(response?.properties["hs_communication_body"], "Texted Linda to confirm that we're ready to move forward with the contract.", "Response is not an instance of SimplePublicObject");
+    test:assertEquals(response?.properties?.hs_communication_body, "Texted Linda to confirm that we're ready to move forward with the contract.", "Response is not an instance of SimplePublicObject");
 }
 
 @test:Config {
@@ -180,11 +180,11 @@ isolated function testCreateBatchOfMessages() returns error? {
             inputs: [
                 {
                     properties: {
-                        "hs_communication_channel_type": "SMS",
-                        "hs_communication_logged_from": "CRM",
-                        "hs_communication_body": "Called Harry to discuss the contract.",
-                        "hs_timestamp": "2022-11-12T15:48:22Z",
-                        "hubspot_owner_id": testOwnerId
+                        hs_communication_channel_type: "SMS",
+                        hs_communication_logged_from: "CRM",
+                        hs_communication_body: "Called Harry to discuss the contract.",
+                        hs_timestamp: "2022-11-12T15:48:22Z",
+                        hubspot_owner_id: testOwnerId
                     },
                     associations: [
                         {
@@ -202,11 +202,11 @@ isolated function testCreateBatchOfMessages() returns error? {
                 },
                 {
                     properties: {
-                        "hs_communication_channel_type": "WHATS_APP",
-                        "hs_communication_logged_from": "CRM",
-                        "hs_communication_body": "Sent an email to Harry to discuss the contract.",
-                        "hs_timestamp": "2022-11-12T15:48:22Z",
-                        "hubspot_owner_id": testOwnerId
+                        hs_communication_channel_type: "WHATS_APP",
+                        hs_communication_logged_from: "CRM",
+                        hs_communication_body: "Sent an email to Harry to discuss the contract.",
+                        hs_timestamp: "2022-11-12T15:48:22Z",
+                        hubspot_owner_id: testOwnerId
                     },
                     associations: [
                         {
@@ -224,11 +224,11 @@ isolated function testCreateBatchOfMessages() returns error? {
                 },
                 {
                     properties: {
-                        "hs_communication_channel_type": "LINKEDIN_MESSAGE",
-                        "hs_communication_logged_from": "CRM",
-                        "hs_communication_body": "Sent an email to Harry to discuss the contract.",
-                        "hs_timestamp": "2022-11-12T15:48:22Z",
-                        "hubspot_owner_id": testOwnerId
+                        hs_communication_channel_type: "LINKEDIN_MESSAGE",
+                        hs_communication_logged_from: "CRM",
+                        hs_communication_body: "Sent an email to Harry to discuss the contract.",
+                        hs_timestamp: "2022-11-12T15:48:22Z",
+                        hubspot_owner_id: testOwnerId
                     },
                     associations: [
                         {
@@ -310,19 +310,19 @@ isolated function testUpdateBatchOfMessages() returns error? {
             inputs: [
                 {
                     properties: {
-                        "hs_communication_body": "Called Linda to discuss the contract."
+                        hs_communication_body: "Called Linda to discuss the contract."
                     },
                     id: testIds[0]
                 },
                 {
                     properties: {
-                        "hs_communication_body": "Sent an email to Linda to discuss the contract."
+                        hs_communication_body: "Sent an email to Linda to discuss the contract."
                     },
                     id: testIds[1]
                 },
                 {
                     properties: {
-                        "hs_communication_body": "Sent an email to Linda to discuss the contract."
+                        hs_communication_body: "Sent an email to Linda to discuss the contract."
                     },
                     id: testIds[2]
                 }
@@ -412,7 +412,7 @@ isolated function testInvalidBatchUpdate() returns error? {
             inputs: [
                 {
                     properties: {
-                        "hs_communication_body": "Called Linda to discuss the contract."
+                        hs_communication_body: "Called Linda to discuss the contract."
                     },
                     id: testId
                 }

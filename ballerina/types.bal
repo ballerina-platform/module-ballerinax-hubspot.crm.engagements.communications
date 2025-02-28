@@ -157,7 +157,7 @@ public type SimplePublicObject record {
     string archivedAt?;
     record {|ValueWithTimestamp[]...;|} propertiesWithHistory?;
     string id;
-    record {|string?...;|} properties;
+    PropertyObject properties;
     string updatedAt;
 };
 
@@ -221,7 +221,7 @@ public type SimplePublicObjectBatchInputUpsert record {
     string idProperty?;
     string objectWriteTraceId?;
     string id;
-    record {|string...;|} properties;
+    PropertyObject properties;
 };
 
 public type BatchResponseSimplePublicObjectWithErrors record {
@@ -250,7 +250,7 @@ public type ProxyConfig record {|
 
 public type SimplePublicObjectInput record {
     string objectWriteTraceId?;
-    record {|string...;|} properties;
+    PropertyObject properties;
 };
 
 # Represents the Queries record for the operation: get-/crm/v3/objects/communications_getPage
@@ -286,7 +286,7 @@ public type SimplePublicObjectWithAssociations record {
     string archivedAt?;
     record {|ValueWithTimestamp[]...;|} propertiesWithHistory?;
     string id;
-    record {|string?...;|} properties;
+    PropertyObject properties;
     string updatedAt;
 };
 
@@ -329,7 +329,7 @@ public type SimplePublicUpsertObject record {
     boolean 'new;
     record {|ValueWithTimestamp[]...;|} propertiesWithHistory?;
     string id;
-    record {|string...;|} properties;
+    PropertyObject properties;
     string updatedAt;
 };
 
@@ -343,7 +343,7 @@ public type SimplePublicObjectBatchInput record {
     string idProperty?;
     string objectWriteTraceId?;
     string id;
-    record {|string...;|} properties;
+    PropertyObject properties;
 };
 
 public type NextPage record {
@@ -365,5 +365,26 @@ public type ApiKeysConfig record {|
 public type SimplePublicObjectInputForCreate record {
     PublicAssociationsForObject[] associations;
     string objectWriteTraceId?;
-    record {|string...;|} properties;
+    PropertyObject properties;
+};
+
+// Added to provide record for 'properties' of the communication object
+public type PropertyObject record {
+    string hs_object_id?;
+    "WHATS_APP"|"LINKEDIN_MESSAGE"|"SMS" hs_communication_channel_type?;
+    string hs_communication_logged_from?;
+    string hs_communication_body?;
+    string hs_timestamp?;
+    string hubspot_owner_id?;
+    string hs_lastmodifieddate?;
+    string hs_createdate?;
+    string hs_all_owner_ids?;
+    string hs_body_preview?;
+    string hs_body_preview_html?;
+    string hs_body_preview_is_truncated?;
+    string hs_object_source?;
+    string hs_object_source_id?;
+    string hs_object_source_label?;
+    string hs_user_ids_of_all_owners?;
+    string hubspot_owner_assigneddate?;
 };

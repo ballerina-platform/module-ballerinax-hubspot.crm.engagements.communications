@@ -45,11 +45,11 @@ public function main() returns error? {
     hscommunications:SimplePublicObject postCommunication = check hubspot->/.post(
         {
             properties: {
-                "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
-                "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
-                "hs_communication_body": "Hello Maria, you can find the requested product catalog attached here.",
-                "hs_timestamp": time:utcToString(time:utcNow()),
-                "hubspot_owner_id": HUBSPOT_OWNER_ID
+                hs_communication_channel_type: COMMUNICATION_CHANNEL_TYPE,
+                hs_communication_logged_from: COMMUNICATION_LOGGED_FROM,
+                hs_communication_body: "Hello Maria, you can find the requested product catalog attached here.",
+                hs_timestamp: time:utcToString(time:utcNow()),
+                hubspot_owner_id: HUBSPOT_OWNER_ID
             },
             associations: [
                 {
@@ -95,7 +95,7 @@ public function main() returns error? {
     hscommunications:SimplePublicObject updateCommunication = check hubspot->/[postCommunication?.id].patch(
         {
             properties: {
-                "hs_communication_body": "Hello Maria, you can find the requested product catalog attached here. Please let me know if you need any further assistance."
+                hs_communication_body: "Hello Maria, you can find the requested product catalog attached here. Please let me know if you need any further assistance."
             }
         }
     );

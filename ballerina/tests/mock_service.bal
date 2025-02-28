@@ -47,9 +47,9 @@ http:Service mockService = service object {
                 {
                     id: "77033252581",
                     properties: {
-                        "hs_createdate": "2025-02-17T05:42:30.324Z",
-                        "hs_lastmodifieddate": "2025-02-17T05:42:30.695Z",
-                        "hs_object_id": "77033252581"
+                        hs_createdate: "2025-02-17T05:42:30.324Z",
+                        hs_lastmodifieddate: "2025-02-17T05:42:30.695Z",
+                        hs_object_id: "77033252581"
                     },
                     createdAt: "2025-02-17T05:42:30.324Z",
                     updatedAt: "2025-02-17T05:42:30.695Z",
@@ -58,9 +58,9 @@ http:Service mockService = service object {
                 {
                     id: "77033659082",
                     properties: {
-                        "hs_createdate": "2025-02-17T09:37:12.237Z",
-                        "hs_lastmodifieddate": "2025-02-17T09:37:12.759Z",
-                        "hs_object_id": "77033659082"
+                        hs_createdate: "2025-02-17T09:37:12.237Z",
+                        hs_lastmodifieddate: "2025-02-17T09:37:12.759Z",
+                        hs_object_id: "77033659082"
                     },
                     createdAt: "2025-02-17T09:37:12.237Z",
                     updatedAt: "2025-02-17T09:37:12.759Z",
@@ -69,9 +69,9 @@ http:Service mockService = service object {
                 {
                     id: "77033660107",
                     properties: {
-                        "hs_createdate": "2025-02-17T09:40:19.594Z",
-                        "hs_lastmodifieddate": "2025-02-17T09:40:20.286Z",
-                        "hs_object_id": "77033660107"
+                        hs_createdate: "2025-02-17T09:40:19.594Z",
+                        hs_lastmodifieddate: "2025-02-17T09:40:20.286Z",
+                        hs_object_id: "77033660107"
                     },
                     createdAt: "2025-02-17T09:40:19.594Z",
                     updatedAt: "2025-02-17T09:40:20.286Z",
@@ -80,9 +80,9 @@ http:Service mockService = service object {
                 {
                     id: "77060898503",
                     properties: {
-                        "hs_createdate": "2025-02-17T09:37:11.622Z",
-                        "hs_lastmodifieddate": "2025-02-17T09:37:12.279Z",
-                        "hs_object_id": "77060898503"
+                        hs_createdate: "2025-02-17T09:37:11.622Z",
+                        hs_lastmodifieddate: "2025-02-17T09:37:12.279Z",
+                        hs_object_id: "77060898503"
                     },
                     createdAt: "2025-02-17T09:37:11.622Z",
                     updatedAt: "2025-02-17T09:37:12.279Z",
@@ -91,9 +91,9 @@ http:Service mockService = service object {
                 {
                     id: "77060898504",
                     properties: {
-                        "hs_createdate": "2025-02-17T09:37:11.622Z",
-                        "hs_lastmodifieddate": "2025-02-17T09:37:12.028Z",
-                        "hs_object_id": "77060898504"
+                        hs_createdate: "2025-02-17T09:37:11.622Z",
+                        hs_lastmodifieddate: "2025-02-17T09:37:12.028Z",
+                        hs_object_id: "77060898504"
                     },
                     createdAt: "2025-02-17T09:37:11.622Z",
                     updatedAt: "2025-02-17T09:37:12.028Z",
@@ -102,9 +102,9 @@ http:Service mockService = service object {
                 {
                     id: "77060898505",
                     properties: {
-                        "hs_createdate": "2025-02-17T09:37:11.622Z",
-                        "hs_lastmodifieddate": "2025-02-17T09:37:12.279Z",
-                        "hs_object_id": "77060898505"
+                        hs_createdate: "2025-02-17T09:37:11.622Z",
+                        hs_lastmodifieddate: "2025-02-17T09:37:12.279Z",
+                        hs_object_id: "77060898505"
                     },
                     createdAt: "2025-02-17T09:37:11.622Z",
                     updatedAt: "2025-02-17T09:37:12.279Z",
@@ -113,9 +113,9 @@ http:Service mockService = service object {
                 {
                     id: "77060899528",
                     properties: {
-                        "hs_createdate": "2025-02-17T09:40:19.079Z",
-                        "hs_lastmodifieddate": "2025-02-17T09:40:19.715Z",
-                        "hs_object_id": "77060899528"
+                        hs_createdate: "2025-02-17T09:40:19.079Z",
+                        hs_lastmodifieddate: "2025-02-17T09:40:19.715Z",
+                        hs_object_id: "77060899528"
                     },
                     createdAt: "2025-02-17T09:40:19.079Z",
                     updatedAt: "2025-02-17T09:40:19.715Z",
@@ -124,9 +124,9 @@ http:Service mockService = service object {
                 {
                     id: "77064474346",
                     properties: {
-                        "hs_createdate": "2025-02-17T05:40:33.136Z",
-                        "hs_lastmodifieddate": "2025-02-17T05:40:33.797Z",
-                        "hs_object_id": "77064474346"
+                        hs_createdate: "2025-02-17T05:40:33.136Z",
+                        hs_lastmodifieddate: "2025-02-17T05:40:33.797Z",
+                        hs_object_id: "77064474346"
                     },
                     createdAt: "2025-02-17T05:40:33.136Z",
                     updatedAt: "2025-02-17T05:40:33.797Z",
@@ -135,9 +135,9 @@ http:Service mockService = service object {
                 {
                     id: "77064688348",
                     properties: {
-                        "hs_createdate": "2025-02-17T11:17:33.698Z",
-                        "hs_lastmodifieddate": "2025-02-17T11:17:34.155Z",
-                        "hs_object_id": "77064688348"
+                        hs_createdate: "2025-02-17T11:17:33.698Z",
+                        hs_lastmodifieddate: "2025-02-17T11:17:34.155Z",
+                        hs_object_id: "77064688348"
                     },
                     createdAt: "2025-02-17T11:17:33.698Z",
                     updatedAt: "2025-02-17T11:17:34.155Z",
@@ -146,9 +146,9 @@ http:Service mockService = service object {
                 {
                     id: "77082006227",
                     properties: {
-                        "hs_createdate": "2025-02-17T08:43:21.034Z",
-                        "hs_lastmodifieddate": "2025-02-17T08:43:21.518Z",
-                        "hs_object_id": "77082006227"
+                        hs_createdate: "2025-02-17T08:43:21.034Z",
+                        hs_lastmodifieddate: "2025-02-17T08:43:21.518Z",
+                        hs_object_id: "77082006227"
                     },
                     createdAt: "2025-02-17T08:43:21.034Z",
                     updatedAt: "2025-02-17T08:43:21.518Z",
@@ -182,9 +182,9 @@ http:Service mockService = service object {
             SimplePublicObjectWithAssociations response = {
                 id: "77255754471",
                 properties: {
-                    "hs_createdate": "2025-02-18T04:22:43.937Z",
-                    "hs_lastmodifieddate": "2025-02-18T04:22:43.937Z",
-                    "hs_object_id": "77255754471"
+                    hs_createdate: "2025-02-18T04:22:43.937Z",
+                    hs_lastmodifieddate: "2025-02-18T04:22:43.937Z",
+                    hs_object_id: "77255754471"
                 },
                 createdAt: "2025-02-17T05:42:30.324Z",
                 updatedAt: "2025-02-17T05:42:30.695Z",
@@ -208,23 +208,23 @@ http:Service mockService = service object {
         SimplePublicObject response = {
             id: "77255754471",
             properties: {
-                "hs_all_owner_ids": "77366318",
-                "hs_body_preview": "Texted Linda to confirm that we're ready to move forward with the contract.",
-                "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Texted Linda to confirm that we're ready to move forward with the contract.\n </body>\n</html>",
-                "hs_body_preview_is_truncated": "false",
-                "hs_communication_body": "Texted Linda to confirm that we're ready to move forward with the contract.",
-                "hs_communication_channel_type": "SMS",
-                "hs_communication_logged_from": "CRM",
-                "hs_createdate": "2025-02-18T04:22:43.937Z",
-                "hs_lastmodifieddate": "2025-02-18T04:22:43.937Z",
-                "hs_object_id": "77255754471",
-                "hs_object_source": "INTEGRATION",
-                "hs_object_source_id": "8113404",
-                "hs_object_source_label": "INTEGRATION",
-                "hs_timestamp": "2022-11-12T15:48:22Z",
-                "hs_user_ids_of_all_owners": "77366318",
-                "hubspot_owner_assigneddate": "2025-02-18T04:22:43.937Z",
-                "hubspot_owner_id": "77366318"
+                hs_all_owner_ids: "77366318",
+                hs_body_preview: "Texted Linda to confirm that we're ready to move forward with the contract.",
+                hs_body_preview_html: "<html>\n <head></head>\n <body>\n Texted Linda to confirm that we're ready to move forward with the contract.\n </body>\n</html>",
+                hs_body_preview_is_truncated: "false",
+                hs_communication_body: "Texted Linda to confirm that we're ready to move forward with the contract.",
+                hs_communication_channel_type: "SMS",
+                hs_communication_logged_from: "CRM",
+                hs_createdate: "2025-02-18T04:22:43.937Z",
+                hs_lastmodifieddate: "2025-02-18T04:22:43.937Z",
+                hs_object_id: "77255754471",
+                hs_object_source: "INTEGRATION",
+                hs_object_source_id: "8113404",
+                hs_object_source_label: "INTEGRATION",
+                hs_timestamp: "2022-11-12T15:48:22Z",
+                hs_user_ids_of_all_owners: "77366318",
+                hubspot_owner_assigneddate: "2025-02-18T04:22:43.937Z",
+                hubspot_owner_id: "77366318"
             },
             createdAt: "2025-02-18T04:22:43.937Z",
             updatedAt: "2025-02-18T04:22:43.937Z",
@@ -243,23 +243,23 @@ http:Service mockService = service object {
         SimplePublicObject response = {
             id: "77255754471",
             properties: {
-                "hs_all_owner_ids": "77366318",
-                "hs_body_preview": "Texted Linda to confirm that we're ready to move forward with the contract.",
-                "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Texted Linda to confirm that we're ready to move forward with the contract.\n </body>\n</html>",
-                "hs_body_preview_is_truncated": "false",
-                "hs_communication_body": "Texted Linda to confirm that we're ready to move forward with the contract.",
-                "hs_communication_channel_type": "SMS",
-                "hs_communication_logged_from": "CRM",
-                "hs_createdate": "2025-02-18T04:22:43.937Z",
-                "hs_lastmodifieddate": "2025-02-18T04:22:43.937Z",
-                "hs_object_id": "77255754471",
-                "hs_object_source": "INTEGRATION",
-                "hs_object_source_id": "8113404",
-                "hs_object_source_label": "INTEGRATION",
-                "hs_timestamp": "2022-11-12T15:48:22Z",
-                "hs_user_ids_of_all_owners": "77366318",
-                "hubspot_owner_assigneddate": "2025-02-18T04:22:43.937Z",
-                "hubspot_owner_id": "77366318"
+                hs_all_owner_ids: "77366318",
+                hs_body_preview: "Texted Linda to confirm that we're ready to move forward with the contract.",
+                hs_body_preview_html: "<html>\n <head></head>\n <body>\n Texted Linda to confirm that we're ready to move forward with the contract.\n </body>\n</html>",
+                hs_body_preview_is_truncated: "false",
+                hs_communication_body: "Texted Linda to confirm that we're ready to move forward with the contract.",
+                hs_communication_channel_type: "SMS",
+                hs_communication_logged_from: "CRM",
+                hs_createdate: "2025-02-18T04:22:43.937Z",
+                hs_lastmodifieddate: "2025-02-18T04:22:43.937Z",
+                hs_object_id: "77255754471",
+                hs_object_source: "INTEGRATION",
+                hs_object_source_id: "8113404",
+                hs_object_source_label: "INTEGRATION",
+                hs_timestamp: "2022-11-12T15:48:22Z",
+                hs_user_ids_of_all_owners: "77366318",
+                hubspot_owner_assigneddate: "2025-02-18T04:22:43.937Z",
+                hubspot_owner_id: "77366318"
             },
             createdAt: "2025-02-18T04:22:43.937Z",
             updatedAt: "2025-02-18T04:22:43.937Z",
@@ -293,23 +293,23 @@ http:Service mockService = service object {
                 {
                     id: "77466931932",
                     properties: {
-                        "hs_all_owner_ids": "77366318",
-                        "hs_body_preview": "Called Harry to discuss the contract.",
-                        "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
-                        "hs_body_preview_is_truncated": "false",
-                        "hs_communication_body": "Called Harry to discuss the contract.",
-                        "hs_communication_channel_type": "SMS",
-                        "hs_communication_logged_from": "CRM",
-                        "hs_createdate": "2025-02-18T05:51:18.584Z",
-                        "hs_lastmodifieddate": "2025-02-18T05:51:18.584Z",
-                        "hs_object_id": "77466931932",
-                        "hs_object_source": "INTEGRATION",
-                        "hs_object_source_id": "8113404",
-                        "hs_object_source_label": "INTEGRATION",
-                        "hs_timestamp": "2022-11-12T15:48:22Z",
-                        "hs_user_ids_of_all_owners": "77366318",
-                        "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
-                        "hubspot_owner_id": "77366318"
+                        hs_all_owner_ids: "77366318",
+                        hs_body_preview: "Called Harry to discuss the contract.",
+                        hs_body_preview_html: "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
+                        hs_body_preview_is_truncated: "false",
+                        hs_communication_body: "Called Harry to discuss the contract.",
+                        hs_communication_channel_type: "SMS",
+                        hs_communication_logged_from: "CRM",
+                        hs_createdate: "2025-02-18T05:51:18.584Z",
+                        hs_lastmodifieddate: "2025-02-18T05:51:18.584Z",
+                        hs_object_id: "77466931932",
+                        hs_object_source: "INTEGRATION",
+                        hs_object_source_id: "8113404",
+                        hs_object_source_label: "INTEGRATION",
+                        hs_timestamp: "2022-11-12T15:48:22Z",
+                        hs_user_ids_of_all_owners: "77366318",
+                        hubspot_owner_assigneddate: "2025-02-18T05:51:18.584Z",
+                        hubspot_owner_id: "77366318"
                     },
                     createdAt: "2025-02-18T05:51:18.584Z",
                     updatedAt: "2025-02-18T05:51:18.584Z",
@@ -318,23 +318,23 @@ http:Service mockService = service object {
                 {
                     id: "77466931934",
                     properties: {
-                        "hs_all_owner_ids": "77366318",
-                        "hs_body_preview": "Called Harry to discuss the contract.",
-                        "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
-                        "hs_body_preview_is_truncated": "false",
-                        "hs_communication_body": "Called Harry to discuss the contract.",
-                        "hs_communication_channel_type": "LINKEDIN_MESSAGE",
-                        "hs_communication_logged_from": "CRM",
-                        "hs_createdate": "2025-02-18T05:51:18.584Z",
-                        "hs_lastmodifieddate": "2025-02-18T05:51:18.584Z",
-                        "hs_object_id": "77466931934",
-                        "hs_object_source": "INTEGRATION",
-                        "hs_object_source_id": "8113404",
-                        "hs_object_source_label": "INTEGRATION",
-                        "hs_timestamp": "2022-11-12T15:48:22Z",
-                        "hs_user_ids_of_all_owners": "77366318",
-                        "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
-                        "hubspot_owner_id": "77366318"
+                        hs_all_owner_ids: "77366318",
+                        hs_body_preview: "Called Harry to discuss the contract.",
+                        hs_body_preview_html: "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
+                        hs_body_preview_is_truncated: "false",
+                        hs_communication_body: "Called Harry to discuss the contract.",
+                        hs_communication_channel_type: "LINKEDIN_MESSAGE",
+                        hs_communication_logged_from: "CRM",
+                        hs_createdate: "2025-02-18T05:51:18.584Z",
+                        hs_lastmodifieddate: "2025-02-18T05:51:18.584Z",
+                        hs_object_id: "77466931934",
+                        hs_object_source: "INTEGRATION",
+                        hs_object_source_id: "8113404",
+                        hs_object_source_label: "INTEGRATION",
+                        hs_timestamp: "2022-11-12T15:48:22Z",
+                        hs_user_ids_of_all_owners: "77366318",
+                        hubspot_owner_assigneddate: "2025-02-18T05:51:18.584Z",
+                        hubspot_owner_id: "77366318"
                     },
                     createdAt: "2025-02-18T05:51:18.584Z",
                     updatedAt: "2025-02-18T05:51:18.584Z",
@@ -343,23 +343,23 @@ http:Service mockService = service object {
                 {
                     id: "77466931933",
                     properties: {
-                        "hs_all_owner_ids": "77366318",
-                        "hs_body_preview": "Called Harry to discuss the contract.",
-                        "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
-                        "hs_body_preview_is_truncated": "false",
-                        "hs_communication_body": "Called Harry to discuss the contract.",
-                        "hs_communication_channel_type": "WHATS_APP",
-                        "hs_communication_logged_from": "CRM",
-                        "hs_createdate": "2025-02-18T05:51:18.584Z",
-                        "hs_lastmodifieddate": "2025-02-18T05:51:18.584Z",
-                        "hs_object_id": "77466931933",
-                        "hs_object_source": "INTEGRATION",
-                        "hs_object_source_id": "8113404",
-                        "hs_object_source_label": "INTEGRATION",
-                        "hs_timestamp": "2022-11-12T15:48:22Z",
-                        "hs_user_ids_of_all_owners": "77366318",
-                        "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
-                        "hubspot_owner_id": "77366318"
+                        hs_all_owner_ids: "77366318",
+                        hs_body_preview: "Called Harry to discuss the contract.",
+                        hs_body_preview_html: "<html>\n <head></head>\n <body>\n Called Harry to discuss the contract.\n </body>\n</html>",
+                        hs_body_preview_is_truncated: "false",
+                        hs_communication_body: "Called Harry to discuss the contract.",
+                        hs_communication_channel_type: "WHATS_APP",
+                        hs_communication_logged_from: "CRM",
+                        hs_createdate: "2025-02-18T05:51:18.584Z",
+                        hs_lastmodifieddate: "2025-02-18T05:51:18.584Z",
+                        hs_object_id: "77466931933",
+                        hs_object_source: "INTEGRATION",
+                        hs_object_source_id: "8113404",
+                        hs_object_source_label: "INTEGRATION",
+                        hs_timestamp: "2022-11-12T15:48:22Z",
+                        hs_user_ids_of_all_owners: "77366318",
+                        hubspot_owner_assigneddate: "2025-02-18T05:51:18.584Z",
+                        hubspot_owner_id: "77366318"
                     },
                     createdAt: "2025-02-18T05:51:18.584Z",
                     updatedAt: "2025-02-18T05:51:18.584Z",
@@ -409,10 +409,10 @@ http:Service mockService = service object {
                     {
                         id: "77466931933",
                         properties: {
-                            "hs_communication_channel_type": "WHATS_APP",
-                            "hs_lastmodifieddate": "2025-02-18T05:51:19.141Z",
-                            "hs_object_id": "77466931933",
-                            "hs_timestamp": "2022-11-12T15:48:22Z"
+                            hs_communication_channel_type: "WHATS_APP",
+                            hs_lastmodifieddate: "2025-02-18T05:51:19.141Z",
+                            hs_object_id: "77466931933",
+                            hs_timestamp: "2022-11-12T15:48:22Z"
                         },
                         propertiesWithHistory: {
                             "hs_communication_body": [
@@ -439,10 +439,10 @@ http:Service mockService = service object {
                     {
                         id: "77466931932",
                         properties: {
-                            "hs_communication_channel_type": "SMS",
-                            "hs_lastmodifieddate": "2025-02-18T05:51:19.141Z",
-                            "hs_object_id": "77466931932",
-                            "hs_timestamp": "2022-11-12T15:48:22Z"
+                            hs_communication_channel_type: "SMS",
+                            hs_lastmodifieddate: "2025-02-18T05:51:19.141Z",
+                            hs_object_id: "77466931932",
+                            hs_timestamp: "2022-11-12T15:48:22Z"
                         },
                         propertiesWithHistory: {
                             "hs_communication_body": [
@@ -469,10 +469,10 @@ http:Service mockService = service object {
                     {
                         id: "77466931934",
                         properties: {
-                            "hs_communication_channel_type": "LINKEDIN_MESSAGE",
-                            "hs_lastmodifieddate": "2025-02-18T05:51:19.141Z",
-                            "hs_object_id": "77466931934",
-                            "hs_timestamp": "2022-11-12T15:48:22Z"
+                            hs_communication_channel_type: "LINKEDIN_MESSAGE",
+                            hs_lastmodifieddate: "2025-02-18T05:51:19.141Z",
+                            hs_object_id: "77466931934",
+                            hs_timestamp: "2022-11-12T15:48:22Z"
                         },
                         propertiesWithHistory: {
                             "hs_communication_body": [
@@ -540,20 +540,20 @@ http:Service mockService = service object {
                     {
                         id: "77466931932",
                         properties: {
-                            "hs_all_owner_ids": "77366318",
-                            "hs_body_preview": "Called Linda to discuss the contract.",
-                            "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Called Linda to discuss the contract.\n </body>\n</html>",
-                            "hs_body_preview_is_truncated": "false",
-                            "hs_communication_body": "Called Linda to discuss the contract.",
-                            "hs_createdate": "2025-02-18T05:51:18.584Z",
-                            "hs_lastmodifieddate": "2025-02-18T06:07:54.506Z",
-                            "hs_object_id": "77466931932",
-                            "hs_object_source": "INTEGRATION",
-                            "hs_object_source_id": "8113404",
-                            "hs_object_source_label": "INTEGRATION",
-                            "hs_user_ids_of_all_owners": "77366318",
-                            "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
-                            "hubspot_owner_id": "77366318"
+                            hs_all_owner_ids: "77366318",
+                            hs_body_preview: "Called Linda to discuss the contract.",
+                            hs_body_preview_html: "<html>\n <head></head>\n <body>\n Called Linda to discuss the contract.\n </body>\n</html>",
+                            hs_body_preview_is_truncated: "false",
+                            hs_communication_body: "Called Linda to discuss the contract.",
+                            hs_createdate: "2025-02-18T05:51:18.584Z",
+                            hs_lastmodifieddate: "2025-02-18T06:07:54.506Z",
+                            hs_object_id: "77466931932",
+                            hs_object_source: "INTEGRATION",
+                            hs_object_source_id: "8113404",
+                            hs_object_source_label: "INTEGRATION",
+                            hs_user_ids_of_all_owners: "77366318",
+                            hubspot_owner_assigneddate: "2025-02-18T05:51:18.584Z",
+                            hubspot_owner_id: "77366318"
                         },
                         createdAt: "2025-02-18T05:51:18.584Z",
                         updatedAt: "2025-02-18T06:07:54.506Z",
@@ -562,20 +562,20 @@ http:Service mockService = service object {
                     {
                         id: "77466931933",
                         properties: {
-                            "hs_all_owner_ids": "77366318",
-                            "hs_body_preview": "Sent an email to Linda to discuss the contract.",
-                            "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Sent an email to Linda to discuss the contract.\n </body>\n</html>",
-                            "hs_body_preview_is_truncated": "false",
-                            "hs_communication_body": "Sent an email to Linda to discuss the contract.",
-                            "hs_createdate": "2025-02-18T05:51:18.584Z",
-                            "hs_lastmodifieddate": "2025-02-18T06:09:21.372Z",
-                            "hs_object_id": "77466931933",
-                            "hs_object_source": "INTEGRATION",
-                            "hs_object_source_id": "8113404",
-                            "hs_object_source_label": "INTEGRATION",
-                            "hs_user_ids_of_all_owners": "77366318",
-                            "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
-                            "hubspot_owner_id": "77366318"
+                            hs_all_owner_ids: "77366318",
+                            hs_body_preview: "Sent an email to Linda to discuss the contract.",
+                            hs_body_preview_html: "<html>\n <head></head>\n <body>\n Sent an email to Linda to discuss the contract.\n </body>\n</html>",
+                            hs_body_preview_is_truncated: "false",
+                            hs_communication_body: "Sent an email to Linda to discuss the contract.",
+                            hs_createdate: "2025-02-18T05:51:18.584Z",
+                            hs_lastmodifieddate: "2025-02-18T06:09:21.372Z",
+                            hs_object_id: "77466931933",
+                            hs_object_source: "INTEGRATION",
+                            hs_object_source_id: "8113404",
+                            hs_object_source_label: "INTEGRATION",
+                            hs_user_ids_of_all_owners: "77366318",
+                            hubspot_owner_assigneddate: "2025-02-18T05:51:18.584Z",
+                            hubspot_owner_id: "77366318"
                         },
                         createdAt: "2025-02-18T05:51:18.584Z",
                         updatedAt: "2025-02-18T06:09:21.372Z",
@@ -584,20 +584,20 @@ http:Service mockService = service object {
                     {
                         id: "77466931934",
                         properties: {
-                            "hs_all_owner_ids": "77366318",
-                            "hs_body_preview": "Sent an email to Linda to discuss the contract.",
-                            "hs_body_preview_html": "<html>\n <head></head>\n <body>\n Sent an email to Linda to discuss the contract.\n </body>\n</html>",
-                            "hs_body_preview_is_truncated": "false",
-                            "hs_communication_body": "Sent an email to Linda to discuss the contract.",
-                            "hs_createdate": "2025-02-18T05:51:18.584Z",
-                            "hs_lastmodifieddate": "2025-02-18T06:09:21.372Z",
-                            "hs_object_id": "77466931934",
-                            "hs_object_source": "INTEGRATION",
-                            "hs_object_source_id": "8113404",
-                            "hs_object_source_label": "INTEGRATION",
-                            "hs_user_ids_of_all_owners": "77366318",
-                            "hubspot_owner_assigneddate": "2025-02-18T05:51:18.584Z",
-                            "hubspot_owner_id": "77366318"
+                            hs_all_owner_ids: "77366318",
+                            hs_body_preview: "Sent an email to Linda to discuss the contract.",
+                            hs_body_preview_html: "<html>\n <head></head>\n <body>\n Sent an email to Linda to discuss the contract.\n </body>\n</html>",
+                            hs_body_preview_is_truncated: "false",
+                            hs_communication_body: "Sent an email to Linda to discuss the contract.",
+                            hs_createdate: "2025-02-18T05:51:18.584Z",
+                            hs_lastmodifieddate: "2025-02-18T06:09:21.372Z",
+                            hs_object_id: "77466931934",
+                            hs_object_source: "INTEGRATION",
+                            hs_object_source_id: "8113404",
+                            hs_object_source_label: "INTEGRATION",
+                            hs_user_ids_of_all_owners: "77366318",
+                            hubspot_owner_assigneddate: "2025-02-18T05:51:18.584Z",
+                            hubspot_owner_id: "77366318"
                         },
                         createdAt: "2025-02-18T05:51:18.584Z",
                         updatedAt: "2025-02-18T06:09:21.372Z",
@@ -639,9 +639,9 @@ http:Service mockService = service object {
                     {
                         id: "77466931932",
                         properties: {
-                            "hs_createdate": "2025-02-18T05:51:18.584Z",
-                            "hs_lastmodifieddate": "2025-02-18T06:07:54.506Z",
-                            "hs_object_id": "77466931932"
+                            hs_createdate: "2025-02-18T05:51:18.584Z",
+                            hs_lastmodifieddate: "2025-02-18T06:07:54.506Z",
+                            hs_object_id: "77466931932"
                         },
                         createdAt: "2025-02-18T05:51:18.584Z",
                         updatedAt: "2025-02-18T06:07:54.506Z",
@@ -650,9 +650,9 @@ http:Service mockService = service object {
                     {
                         id: "77466931933",
                         properties: {
-                            "hs_createdate": "2025-02-18T05:51:18.584Z",
-                            "hs_lastmodifieddate": "2025-02-18T06:09:21.372Z",
-                            "hs_object_id": "77466931933"
+                            hs_createdate: "2025-02-18T05:51:18.584Z",
+                            hs_lastmodifieddate: "2025-02-18T06:09:21.372Z",
+                            hs_object_id: "77466931933"
                         },
                         createdAt: "2025-02-18T05:51:18.584Z",
                         updatedAt: "2025-02-18T06:09:21.372Z",
@@ -661,9 +661,9 @@ http:Service mockService = service object {
                     {
                         id: "77466931934",
                         properties: {
-                            "hs_createdate": "2025-02-18T05:51:18.584Z",
-                            "hs_lastmodifieddate": "2025-02-18T06:09:21.372Z",
-                            "hs_object_id": "77466931934"
+                            hs_createdate: "2025-02-18T05:51:18.584Z",
+                            hs_lastmodifieddate: "2025-02-18T06:09:21.372Z",
+                            hs_object_id: "77466931934"
                         },
                         createdAt: "2025-02-18T05:51:18.584Z",
                         updatedAt: "2025-02-18T06:09:21.372Z",

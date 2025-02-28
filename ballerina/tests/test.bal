@@ -24,8 +24,6 @@ configurable string refreshToken = "<HUBSPOT_REFRESH_TOKEN>";
 
 configurable boolean isLiveServer = false;
 
-final string serviceUrl = isLiveServer ? "https://api.hubapi.com/crm/v3/objects/communications" : "http://localhost:9090";
-
 final Client hubspot = check initClient();
 
 isolated function initClient() returns Client|error {
@@ -36,14 +34,14 @@ isolated function initClient() returns Client|error {
             refreshToken,
             credentialBearer: oauth2:POST_BODY_BEARER
         };
-        return check new ({auth}, serviceUrl);
+        return check new ({auth}, "https://api.hubapi.com/crm/v3/objects/communications");
     }
 
     return check new ({
         auth: {
             token: "test-token"
         }
-    }, serviceUrl);
+    }, "http://localhost:9090");
 }
 
 isolated string testCommunicationId = "";

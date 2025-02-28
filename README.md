@@ -155,7 +155,7 @@ import ballerina/oauth2;
         }
     };
 
-    final hscommunications:Client baseClient = check new (config);
+    final hscommunications:Client hubspot = check new (config);
     ```
 
 ### Step 3: Invoke the connector operation
@@ -166,7 +166,7 @@ Now, utilize the available connector operations. A sample usecase is shown below
 
 ```ballerina
 public function main() returns error? {
-   hscommunications:CollectionResponseSimplePublicObjectWithAssociationsForwardPaging getCommunications = check baseClient->/.get();
+   hscommunications:CollectionResponseSimplePublicObjectWithAssociationsForwardPaging getCommunications = check hubspot->/.get();
    io:println("Logged communications: ", getCommunications);
 }
 ```

@@ -5,7 +5,8 @@ name = "hubspot.crm.engagements.communications"
 version = "1.0.0"
 license = ["Apache-2.0"]
 authors = ["Ballerina"]
-keywords = ["hubspot", "crm", "enagagements communications", "engagements", "communications"]
+keywords = [] # TODO: Add keywords
+# icon = "icon.png" # TODO: Add icon
 repository = "https://github.com/ballerina-platform/module-ballerinax-hubspot.crm.engagements.communications"
 
 [build-options]

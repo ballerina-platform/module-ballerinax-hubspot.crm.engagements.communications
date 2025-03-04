@@ -107,7 +107,6 @@ Before proceeding with the Quickstart, ensure you have obtained the Access Token
    ```
 5. Store the refresh token securely for use in your application.
 
-
 ## Quickstart
 
 To use the `Hubspot CRM Engagements Communications` connector in your Ballerina application, update the `.bal` file as follows:
@@ -117,8 +116,8 @@ To use the `Hubspot CRM Engagements Communications` connector in your Ballerina 
 Import the `hubspot.crm.engagements.communications` module and `oauth2` module.
 
 ```ballerina
-import ballerinax/hubspot.crm.engagements.communications as hscommunications;
 import ballerina/oauth2;
+import ballerinax/hubspot.crm.engagements.communications as hscommunications;
 ```
 
 ### Step 2: Instantiate a new connector

@@ -14,7 +14,6 @@
 // specific language governing permissions and limitations
 // under the License.
 
-import ballerina/http;
 import ballerina/io;
 import ballerina/oauth2;
 import ballerina/time;
@@ -47,11 +46,11 @@ public function main() returns error? {
             inputs: [
                 {
                     properties: {
-                        hs_communication_channel_type: COMMUNICATION_CHANNEL_TYPE,
-                        hs_communication_logged_from: COMMUNICATION_LOGGED_FROM,
-                        hs_communication_body: "Hello Maria, you can find the requested product catalog attached here.",
-                        hs_timestamp: time:utcToString(time:utcNow()),
-                        hubspot_owner_id: HUBSPOT_OWNER_ID
+                        "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
+                        "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
+                        "hs_communication_body": "Hello Maria, you can find the requested product catalog attached here.",
+                        "hs_timestamp": time:utcToString(time:utcNow()),
+                        "hubspot_owner_id": HUBSPOT_OWNER_ID
                     },
                     associations: [
                         {
@@ -69,11 +68,11 @@ public function main() returns error? {
                 },
                 {
                     properties: {
-                        hs_communication_channel_type: COMMUNICATION_CHANNEL_TYPE,
-                        hs_communication_logged_from: COMMUNICATION_LOGGED_FROM,
-                        hs_communication_body: "Hello John, you can find the requested product catalog attached here.",
-                        hs_timestamp: time:utcToString(time:utcNow()),
-                        hubspot_owner_id: HUBSPOT_OWNER_ID
+                        "hs_communication_channel_type": COMMUNICATION_CHANNEL_TYPE,
+                        "hs_communication_logged_from": COMMUNICATION_LOGGED_FROM,
+                        "hs_communication_body": "Hello John, you can find the requested product catalog attached here.",
+                        "hs_timestamp": time:utcToString(time:utcNow()),
+                        "hubspot_owner_id": HUBSPOT_OWNER_ID
                     },
                     associations: [
                         {
@@ -101,15 +100,15 @@ public function main() returns error? {
                 {
                     id: postBatchOfCommunications.results[0].id,
                     properties: {
-                        hs_communication_body: "Hello Maria, you can find the requested product catalog attached here. Please let me know if you need any further information.",
-                        hs_timestamp: time:utcToString(time:utcNow())
+                        "hs_communication_body": "Hello Maria, you can find the requested product catalog attached here. Please let me know if you need any further information.",
+                        "hs_timestamp": time:utcToString(time:utcNow())
                     }
                 },
                 {
                     id: postBatchOfCommunications.results[1].id,
                     properties: {
-                        hs_communication_body: "Hello John, you can find the requested product catalog attached here. Please let me know if you need any further information.",
-                        hs_timestamp: time:utcToString(time:utcNow())
+                        "hs_communication_body": "Hello John, you can find the requested product catalog attached here. Please let me know if you need any further information.",
+                        "hs_timestamp": time:utcToString(time:utcNow())
                     }
                 }
             ]
@@ -135,7 +134,7 @@ public function main() returns error? {
 
     io:println("Retrieved communication: ", getBatchOfCommunications, "\n");
 
-    http:Response deleteBatchOfCommunications = check hubspot->/batch/archive.post(
+    error? deleteBatchOfCommunications = hubspot->/batch/archive.post(
         {
             inputs: [
                 {
@@ -148,7 +147,7 @@ public function main() returns error? {
         }
     );
 
-    if deleteBatchOfCommunications.statusCode == 204 {
+    if deleteBatchOfCommunications == () {
         io:println("Deleted communication successfully");
     } else {
         io:println("Failed to delete communication");

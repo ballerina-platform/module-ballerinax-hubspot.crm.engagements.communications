@@ -2,7 +2,14 @@
 
 [HubSpot](https://developers.hubspot.com) is an AI-powered customer relationship management (CRM) platform.
 
-The `ballerinax/hubspot.crm.engagements.communications` offers APIs to connect and interact with the [HubSpot CRM Engagements Communications API](https://developers.hubspot.com/docs/reference/api/crm/engagements/communications) endpoints, specifically based on the [HubSpot REST API](https://developers.hubspot.com/docs/reference/api). 
+The HubSpot connector offers APIs to connect and interact with the [HubSpot CRM Engagements Communications API](https://developers.hubspot.com/docs/reference/api/crm/engagements/communications) endpoints, specifically based on the [HubSpot REST API](https://developers.hubspot.com/docs/reference/api). 
+
+### Key Features
+
+- Create, read, update, and delete communication engagement records
+- Batch operations for bulk communication management
+- Search communications with filtering support
+- Track customer communication interactions
 
 ## Setup guide
 
